@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_75VHUAyKEeuShLlpqINvYA" name="Modèle">
+  <eAnnotations xmi:id="_75VHUQyKEeuShLlpqINvYA" source="Objing">
+    <contents xmi:type="uml:Property" xmi:id="_75VHUgyKEeuShLlpqINvYA" name="exporterVersion">
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHUwyKEeuShLlpqINvYA" value="3.0.0"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VHVAyKEeuShLlpqINvYA" name="Film">
+    <ownedAttribute xmi:id="_75VHVQyKEeuShLlpqINvYA" name="acteur" visibility="public" type="_75VH-wyKEeuShLlpqINvYA" association="_75VHYwyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHVgyKEeuShLlpqINvYA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHVwyKEeuShLlpqINvYA" name="genre" visibility="private" type="_75VH_QyKEeuShLlpqINvYA" association="_75VHZgyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHWAyKEeuShLlpqINvYA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHWQyKEeuShLlpqINvYA" name="realisateur" visibility="public" type="_75VH_AyKEeuShLlpqINvYA" association="_75VHagyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHWgyKEeuShLlpqINvYA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHWwyKEeuShLlpqINvYA" name="titre" visibility="private" isUnique="false">
+      <ownedComment xmi:id="_75VHXAyKEeuShLlpqINvYA">
+        <body>&lt;Saisir le texte de la note ici></body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHXQyKEeuShLlpqINvYA" name="Annee" visibility="private" isUnique="false">
+      <ownedComment xmi:id="_75VHXgyKEeuShLlpqINvYA">
+        <body>Date de réalisation</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHXwyKEeuShLlpqINvYA" name="resume" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHYAyKEeuShLlpqINvYA" name="poster" visibility="private" type="_75VuaQyKEeuShLlpqINvYA" isUnique="false">
+      <ownedComment xmi:id="_75VHYQyKEeuShLlpqINvYA">
+        <body>Image</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHYgyKEeuShLlpqINvYA" name="demande" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHYwyKEeuShLlpqINvYA" memberEnd="_75VHVQyKEeuShLlpqINvYA _75VHZAyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHZAyKEeuShLlpqINvYA" visibility="public" type="_75VHVAyKEeuShLlpqINvYA" association="_75VHYwyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHZQyKEeuShLlpqINvYA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHZgyKEeuShLlpqINvYA" memberEnd="_75VHVwyKEeuShLlpqINvYA _75VHZwyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHZwyKEeuShLlpqINvYA" name="films" visibility="public" type="_75VHVAyKEeuShLlpqINvYA" association="_75VHZgyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHaAyKEeuShLlpqINvYA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHaQyKEeuShLlpqINvYA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHagyKEeuShLlpqINvYA" memberEnd="_75VHWQyKEeuShLlpqINvYA _75VHawyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHawyKEeuShLlpqINvYA" visibility="public" type="_75VHVAyKEeuShLlpqINvYA" association="_75VHagyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHbAyKEeuShLlpqINvYA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VHbQyKEeuShLlpqINvYA" name="DVD">
+    <ownedAttribute xmi:id="_75VHbgyKEeuShLlpqINvYA" name="film" visibility="private" type="_75VHVAyKEeuShLlpqINvYA" association="_75VHcQyKEeuShLlpqINvYA"/>
+    <ownedAttribute xmi:id="_75VHbwyKEeuShLlpqINvYA" name="etat" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHcAyKEeuShLlpqINvYA" name="loue" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHcQyKEeuShLlpqINvYA" memberEnd="_75VHbgyKEeuShLlpqINvYA _75VHcgyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHcgyKEeuShLlpqINvYA" visibility="public" type="_75VHbQyKEeuShLlpqINvYA" association="_75VHcQyKEeuShLlpqINvYA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHcwyKEeuShLlpqINvYA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VHdAyKEeuShLlpqINvYA" name="Location">
+    <ownedAttribute xmi:id="_75VHdQyKEeuShLlpqINvYA" name="dVD" visibility="private" type="_75VHbQyKEeuShLlpqINvYA" association="_75VHfQyKEeuShLlpqINvYA"/>
+    <ownedAttribute xmi:id="_75VHdgyKEeuShLlpqINvYA" name="abonne" visibility="private" type="_75VHrgyKEeuShLlpqINvYA" association="_75VHfwyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHdwyKEeuShLlpqINvYA" value="3"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHeAyKEeuShLlpqINvYA"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHeQyKEeuShLlpqINvYA" name="non Abonne" visibility="public" type="_75VHwQyKEeuShLlpqINvYA" association="_75VHggyKEeuShLlpqINvYA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHegyKEeuShLlpqINvYA"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHewyKEeuShLlpqINvYA" name="dateEmprunt" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHfAyKEeuShLlpqINvYA" name="dateRetour" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHfQyKEeuShLlpqINvYA" memberEnd="_75VHdQyKEeuShLlpqINvYA _75VHfgyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHfgyKEeuShLlpqINvYA" visibility="public" type="_75VHdAyKEeuShLlpqINvYA" association="_75VHfQyKEeuShLlpqINvYA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHfwyKEeuShLlpqINvYA" memberEnd="_75VHdgyKEeuShLlpqINvYA _75VHgAyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHgAyKEeuShLlpqINvYA" visibility="public" type="_75VHdAyKEeuShLlpqINvYA" association="_75VHfwyKEeuShLlpqINvYA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHgQyKEeuShLlpqINvYA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHggyKEeuShLlpqINvYA" memberEnd="_75VHeQyKEeuShLlpqINvYA _75VHgwyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHgwyKEeuShLlpqINvYA" visibility="public" type="_75VHdAyKEeuShLlpqINvYA" association="_75VHggyKEeuShLlpqINvYA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHhAyKEeuShLlpqINvYA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VHhQyKEeuShLlpqINvYA" name="User" isAbstract="true">
+    <ownedAttribute xmi:id="_75VHhgyKEeuShLlpqINvYA" name="carteBanquaire" visibility="public" type="_75VH_gyKEeuShLlpqINvYA" association="_75VHrAyKEeuShLlpqINvYA">
+      <ownedComment xmi:id="_75VHhwyKEeuShLlpqINvYA">
+        <body>&lt;Saisir le texte de la note ici></body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHiAyKEeuShLlpqINvYA" name="id" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHiQyKEeuShLlpqINvYA" name="carteBancaire" visibility="private" type="_75VH_gyKEeuShLlpqINvYA" isUnique="false"/>
+    <ownedOperation xmi:id="_75VHigyKEeuShLlpqINvYA" name="emprunte" visibility="public">
+      <ownedComment xmi:id="_75VHiwyKEeuShLlpqINvYA">
+        <body>Permet d'emprunter un DVD</body>
+      </ownedComment>
+      <ownedParameter xmi:id="_75VHjAyKEeuShLlpqINvYA" name="dvd" type="_75VHbQyKEeuShLlpqINvYA" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHjQyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHjgyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHjwyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VHkAyKEeuShLlpqINvYA" type="_75VHdAyKEeuShLlpqINvYA" isUnique="false" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHkQyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHkgyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHkwyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VHlAyKEeuShLlpqINvYA" name="debiter" visibility="public">
+      <ownedComment xmi:id="_75VHlQyKEeuShLlpqINvYA">
+        <body>&lt;Saisir le texte de la note ici></body>
+      </ownedComment>
+      <ownedParameter xmi:id="_75VHlgyKEeuShLlpqINvYA" name="montant" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHlwyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHmAyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHmQyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VHmgyKEeuShLlpqINvYA" name="souscrireAbo" visibility="public">
+      <ownedComment xmi:id="_75VHmwyKEeuShLlpqINvYA">
+        <body>Creation d'un compte abonné (carte avec un montantInitial minimum de 15€)</body>
+      </ownedComment>
+      <ownedParameter xmi:id="_75VHnAyKEeuShLlpqINvYA" name="nom" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHnQyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHngyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHnwyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VHoAyKEeuShLlpqINvYA" name="prenom" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHoQyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHogyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHowyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VHpAyKEeuShLlpqINvYA" name="montantInitial" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHpQyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHpgyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHpwyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VHqAyKEeuShLlpqINvYA" type="_75VHrgyKEeuShLlpqINvYA" isUnique="false" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHqQyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHqgyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHqwyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VHrAyKEeuShLlpqINvYA" memberEnd="_75VHhgyKEeuShLlpqINvYA _75VHrQyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VHrQyKEeuShLlpqINvYA" visibility="public" type="_75VHhQyKEeuShLlpqINvYA" association="_75VHrAyKEeuShLlpqINvYA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VHrgyKEeuShLlpqINvYA" name="Abonne">
+    <generalization xmi:id="_75VHrwyKEeuShLlpqINvYA" general="_75VHhQyKEeuShLlpqINvYA"/>
+    <ownedAttribute xmi:id="_75VHsAyKEeuShLlpqINvYA" name="nom" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHsQyKEeuShLlpqINvYA" name="prenom" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHsgyKEeuShLlpqINvYA" name="solde" visibility="private" isUnique="false">
+      <ownedComment xmi:id="_75VHswyKEeuShLlpqINvYA">
+        <body>&lt;Saisir le texte de la note ici></body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_75VHtAyKEeuShLlpqINvYA" name="demanderFilm" visibility="public">
+      <ownedComment xmi:id="_75VHtQyKEeuShLlpqINvYA">
+        <body>Permet de demander l'aquisition d'un film</body>
+      </ownedComment>
+      <ownedParameter xmi:id="_75VHtgyKEeuShLlpqINvYA" name="film" type="_75VHVAyKEeuShLlpqINvYA" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHtwyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHuAyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHuQyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VHugyKEeuShLlpqINvYA" name="crediterCarte" visibility="public">
+      <ownedParameter xmi:id="_75VHuwyKEeuShLlpqINvYA" name="montant" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHvAyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHvQyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VHvgyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VHvwyKEeuShLlpqINvYA" name="afficherInfos" visibility="public"/>
+    <ownedOperation xmi:id="_75VHwAyKEeuShLlpqINvYA" name="afficherHistorique" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VHwQyKEeuShLlpqINvYA" name="Non Abonne">
+    <generalization xmi:id="_75VHwgyKEeuShLlpqINvYA" general="_75VHhQyKEeuShLlpqINvYA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VHwwyKEeuShLlpqINvYA" name="Machine">
+    <ownedAttribute xmi:id="_75VHxAyKEeuShLlpqINvYA" name="dVD" visibility="public" type="_75VHbQyKEeuShLlpqINvYA" association="_75VH9AyKEeuShLlpqINvYA">
+      <ownedComment xmi:id="_75VHxQyKEeuShLlpqINvYA">
+        <body>&lt;Saisir le texte de la note ici></body>
+      </ownedComment>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHxgyKEeuShLlpqINvYA" value="100"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHxwyKEeuShLlpqINvYA" value="100"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHyAyKEeuShLlpqINvYA" name="film" visibility="public" type="_75VHVAyKEeuShLlpqINvYA" association="_75VH9gyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHyQyKEeuShLlpqINvYA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHygyKEeuShLlpqINvYA"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_75VHywyKEeuShLlpqINvYA" name="location" visibility="public" type="_75VHdAyKEeuShLlpqINvYA" association="_75VH-AyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VHzAyKEeuShLlpqINvYA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VHzQyKEeuShLlpqINvYA"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_75VHzgyKEeuShLlpqINvYA" name="afficherFilmsCharges" visibility="public"/>
+    <ownedOperation xmi:id="_75VHzwyKEeuShLlpqINvYA" name="AfficherFilmsDisponibles" visibility="public"/>
+    <ownedOperation xmi:id="_75VH0AyKEeuShLlpqINvYA" name="RechercherFilms" visibility="public">
+      <ownedParameter xmi:id="_75VH0QyKEeuShLlpqINvYA" name="acteur" type="_75VH-wyKEeuShLlpqINvYA" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH0gyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH0wyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH1AyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VH1QyKEeuShLlpqINvYA" type="_75VHVAyKEeuShLlpqINvYA" isUnique="false" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH1gyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH1wyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH2AyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VH2QyKEeuShLlpqINvYA" name="RechercherFilms" visibility="public">
+      <ownedParameter xmi:id="_75VH2gyKEeuShLlpqINvYA" name="realisateur" type="_75VH_AyKEeuShLlpqINvYA" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH2wyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH3AyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH3QyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VH3gyKEeuShLlpqINvYA" type="_75VHVAyKEeuShLlpqINvYA" isUnique="false" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH3wyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH4AyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH4QyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VH4gyKEeuShLlpqINvYA" name="RechercherFilms" visibility="public">
+      <ownedParameter xmi:id="_75VH4wyKEeuShLlpqINvYA" name="genre" type="_75VH_QyKEeuShLlpqINvYA" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH5AyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH5QyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH5gyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VH5wyKEeuShLlpqINvYA" type="_75VHVAyKEeuShLlpqINvYA" isUnique="false" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH6AyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH6QyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH6gyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VH6wyKEeuShLlpqINvYA" name="RechercherFilms" visibility="public">
+      <ownedParameter xmi:id="_75VH7AyKEeuShLlpqINvYA" name="nom" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH7QyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH7gyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH7wyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_75VH8AyKEeuShLlpqINvYA" type="_75VHVAyKEeuShLlpqINvYA" isUnique="false" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VH8QyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VH8gyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VH8wyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VH9AyKEeuShLlpqINvYA" memberEnd="_75VHxAyKEeuShLlpqINvYA _75VH9QyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VH9QyKEeuShLlpqINvYA" visibility="public" type="_75VHwwyKEeuShLlpqINvYA" association="_75VH9AyKEeuShLlpqINvYA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VH9gyKEeuShLlpqINvYA" memberEnd="_75VHyAyKEeuShLlpqINvYA _75VH9wyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VH9wyKEeuShLlpqINvYA" visibility="public" type="_75VHwwyKEeuShLlpqINvYA" association="_75VH9gyKEeuShLlpqINvYA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VH-AyKEeuShLlpqINvYA" memberEnd="_75VHywyKEeuShLlpqINvYA _75VH-QyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VH-QyKEeuShLlpqINvYA" visibility="public" type="_75VHwwyKEeuShLlpqINvYA" association="_75VH-AyKEeuShLlpqINvYA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_75VH-gyKEeuShLlpqINvYA" name="string[]"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VH-wyKEeuShLlpqINvYA" name="Acteur"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VH_AyKEeuShLlpqINvYA" name="Realisateur"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VH_QyKEeuShLlpqINvYA" name="Genre"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VH_gyKEeuShLlpqINvYA" name="CarteBanquaire"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75VH_wyKEeuShLlpqINvYA" name="Maintenance">
+    <ownedAttribute xmi:id="_75VIAAyKEeuShLlpqINvYA" name="machine" visibility="public" type="_75VHwwyKEeuShLlpqINvYA" association="_75VuZgyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VIAQyKEeuShLlpqINvYA" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_75VIAgyKEeuShLlpqINvYA" name="configurerAccueil" visibility="public">
+      <ownedComment xmi:id="_75VIAwyKEeuShLlpqINvYA">
+        <body>&lt;Saisir le texte de la note ici></body>
+      </ownedComment>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VIBAyKEeuShLlpqINvYA" name="afficherStatistiques" visibility="public"/>
+    <ownedOperation xmi:id="_75VIBQyKEeuShLlpqINvYA" name="ajouterDvd" visibility="public">
+      <ownedParameter xmi:id="_75VIBgyKEeuShLlpqINvYA" name="dvd" type="_75VHbQyKEeuShLlpqINvYA" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VIBwyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VICAyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VICQyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_75VuYAyKEeuShLlpqINvYA" name="retirerDvd" visibility="public">
+      <ownedComment xmi:id="_75VuYQyKEeuShLlpqINvYA">
+        <body>&lt;Saisir le texte de la note ici></body>
+      </ownedComment>
+      <ownedParameter xmi:id="_75VuYgyKEeuShLlpqINvYA" name="dvd" type="_75VHbQyKEeuShLlpqINvYA" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VuYwyKEeuShLlpqINvYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_75VuZAyKEeuShLlpqINvYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_75VuZQyKEeuShLlpqINvYA" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_75VuZgyKEeuShLlpqINvYA" memberEnd="_75VIAAyKEeuShLlpqINvYA _75VuZwyKEeuShLlpqINvYA">
+    <ownedEnd xmi:id="_75VuZwyKEeuShLlpqINvYA" visibility="public" type="_75VH_wyKEeuShLlpqINvYA" association="_75VuZgyKEeuShLlpqINvYA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_75VuaAyKEeuShLlpqINvYA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_75VuaQyKEeuShLlpqINvYA" name="undefined"/>
+</uml:Model>
