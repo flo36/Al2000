@@ -23,11 +23,11 @@ public class ClientOracle {
     }
 
 
-    final String CONN_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
-    final String USER = "test";
-    final String PASSWD = "pw";
+    private final String CONN_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
+    private final String USER = "test";
+    private final String PASSWD = "pw";
 
-    Connection conn;
+    private Connection conn;
 
 
     private void connect() {
