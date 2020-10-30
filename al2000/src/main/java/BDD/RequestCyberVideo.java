@@ -13,7 +13,7 @@ public class RequestCyberVideo {
         return (String[]) resultSetToArray1(rs).toArray();
     }
 
-    public Film getFilm(String name){
+    public static Film getFilm(String name){
         ResultSet rs = ClientOracle.instance().sendRequest("SELECT * from LesFilms where nomF = '"+ name +"'");
         return new Film();
         //A changer il faut construire le film
