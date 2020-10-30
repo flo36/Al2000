@@ -1,4 +1,4 @@
-package main.java.Model;
+package Client;
 
 public class Location {
 
