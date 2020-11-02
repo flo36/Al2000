@@ -17,7 +17,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Quits</mainClass>
+                            <mainClass>al2000</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

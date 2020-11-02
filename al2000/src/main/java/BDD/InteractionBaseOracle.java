@@ -10,27 +10,21 @@ import java.sql.*;
  -> Envoie la mise à jour et retourne le nombre de changements
  */
 
-public class ClientOracle {
-    // Pattern Singleton
-    static volatile ClientOracle instance = null;
-    public static ClientOracle instance(){
-        if(instance == null)
-            instance = new ClientOracle();
-        return instance;
-    }
-    private ClientOracle(){
+public class InteractionBaseOracle {
+    InteractionBaseOracle(String url){
         super();
+        CONN_URL = url;
     }
 
-
-    private final String CONN_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
+    private final String CONN_URL;
     private final String USER = "test";
     private final String PASSWD = "pw";
+
 
     private Connection conn;
 
 
-    private void connect() {
+    private boolean connect() {
 
         try {
             // Enregistrement du driver Oracle
@@ -46,7 +40,9 @@ public class ClientOracle {
             // traitement d'exception
         } catch (SQLException e) {
             sqlerrorhandler(e);
+            return true;
         }
+        return false;
     }
 
     private void disconnect() {
@@ -73,7 +69,7 @@ public class ClientOracle {
 
 
     public ResultSet sendRequest(String sql) {
-
+        if(connect()) return null;
         Statement stmt;
         ResultSet rs = null;
 
@@ -84,11 +80,13 @@ public class ClientOracle {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        disconnect();
         return rs;
     }
 
 
-    public int envoyerUpdate(String sql) {
+    public int sendUpdate(String sql) {
+        if(connect()) return 0;
         Statement stmt;
         int rs = 0;
 
@@ -99,6 +97,7 @@ public class ClientOracle {
         } catch (SQLException e) {
             System.out.print(e.getMessage());
         }
+        disconnect();
         return rs;
     }
 
