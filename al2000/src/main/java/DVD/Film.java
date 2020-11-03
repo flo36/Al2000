@@ -1,4 +1,4 @@
-package Model;
+package DVD;
 
 public class Film {
 

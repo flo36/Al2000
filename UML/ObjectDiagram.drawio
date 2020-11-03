@@ -1,0 +1,250 @@
+<mxfile host="65bd71144e" modified="2020-11-01T19:43:07.157Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="qtr6NdcyqB_RmwuofLCX" version="13.6.5">
+    <diagram id="G2yjbjgT_xyMwrx9yoN4" name="Page-1">
+        <mxGraphModel dx="1280" dy="1224" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="130" value="Celebrite" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="375" width="120" height="105" as="geometry"/>
+                </mxCell>
+                <object label="Al2000Mediateur" id="11">
+                    <mxCell style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                        <mxGeometry x="270" y="390" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="12" value="Statistique" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="390" width="120" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Location" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <object label="Affichage" id="17">
+                    <mxCell style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                        <mxGeometry x="190" y="610" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </object>
+                <object label="Controleur" id="19">
+                    <mxCell style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                        <mxGeometry x="420" y="670" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="20" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="17" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="280" y="500" as="sourcePoint"/>
+                        <mxPoint x="330" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="" style="endArrow=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" parent="1" source="19" target="11" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="340" y="500" as="sourcePoint"/>
+                        <mxPoint x="390" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="11" target="36" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="410" y="390" as="sourcePoint"/>
+                        <mxPoint x="470" y="310" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="" style="endArrow=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="13" target="36" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="330" as="sourcePoint"/>
+                        <mxPoint x="470" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="Utilisateur" style="ellipse;whiteSpace=wrap;html=1;rounded=0;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="160" width="120" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Abonne" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="180" width="120" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="12" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="393" y="420" as="sourcePoint"/>
+                        <mxPoint x="550" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="Ecrantactile" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="800" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="LecteurCarteBleu" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="800" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="LecteurCarteAbo" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="800" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="endArrow=none;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="19" target="48" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="440" y="590" as="sourcePoint"/>
+                        <mxPoint x="490" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="51" value="" style="endArrow=none;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="19" target="49" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="620" y="680" as="sourcePoint"/>
+                        <mxPoint x="670" y="630" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="" style="endArrow=none;html=1;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="47" target="19" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="460" y="800" as="sourcePoint"/>
+                        <mxPoint x="510" y="750" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="LecteurDVD" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="800" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="" style="endArrow=none;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="55" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="730" as="sourcePoint"/>
+                        <mxPoint x="730" y="810" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <object label="Ecran&lt;br&gt;ListingFilm" id="58">
+                    <mxCell style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                        <mxGeometry x="190" y="730" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </object>
+                <object label="Overlay&lt;br&gt;Utilisateur" id="65">
+                    <mxCell style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                        <mxGeometry x="10" y="610" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="66" value="" style="endArrow=none;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="65" target="17" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-140" y="690" as="sourcePoint"/>
+                        <mxPoint x="-90" y="640" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="70" value="" style="endArrow=none;html=1;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="58" target="17" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="230" y="720" as="sourcePoint"/>
+                        <mxPoint x="260" y="680" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="77" value="&lt;font style=&quot;font-size: 10px&quot;&gt;Singleton&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="370" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="&lt;font style=&quot;font-size: 10px&quot;&gt;Singleton&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="590" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="&lt;font style=&quot;font-size: 10px&quot;&gt;Singleton&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="370" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="&lt;h1&gt;Etat lors d'une recherche des films disponibles après avoir inseré sa carte utilisateur&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="50" width="600" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="Location" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="" style="endArrow=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="82" target="36" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="251.42857142857133" as="sourcePoint"/>
+                        <mxPoint x="400" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="91" value="DVD" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;endArrow=none;endFill=0;" parent="1" source="92" target="96" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="DVD" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="prenom = Bill Rémi&lt;br&gt;nom = Gates&lt;br&gt;age = 25&lt;br&gt;carte bleu = XXXX&lt;br&gt;solde = 100 000&lt;br&gt;historique = [&quot;Aller vers le futur&quot;, &quot;...&quot;]&lt;br&gt;restrictions : [Horreur, SciFi]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="190" width="120" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="" style="endArrow=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="92" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="670" y="189.99857142857132" as="sourcePoint"/>
+                        <mxPoint x="590" y="218.57" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="95" value="" style="endArrow=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="640" y="310" as="sourcePoint"/>
+                        <mxPoint x="590" y="308.56999999999994" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="96" value="Film" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="160" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;endArrow=none;endFill=0;" parent="1" target="99" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="760" y="310" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="99" value="Film" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="280" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="&lt;span style=&quot;font-size: 10px&quot;&gt;NbDVD dispo = 33&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;NbDVD loués = 42&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;&amp;nbsp;NbDVD loués&amp;nbsp; total = 999&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;Argent gagné = 2500&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;...&lt;/span&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="420" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="" style="endArrow=none;html=1;fontSize=10;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" target="99" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="880" y="370" as="sourcePoint"/>
+                        <mxPoint x="879.5" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="115" value="Celebrite" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="240" width="120" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%26lt%3Bdiv%20style%3D%26quot%3Btext-align%3A%20justify%26quot%3B%26gt%3B%26lt%3Bspan%20style%3D%26quot%3Bfont-size%3A%2010px%26quot%3B%26gt%3B-id_acteur%20%3A%20integer%26lt%3B%2Fspan%26gt%3B%26lt%3B%2Fdiv%26gt%3B%26lt%3Bfont%20style%3D%26quot%3Bfont-size%3A%2010px%26quot%3B%26gt%3B%26lt%3Bdiv%20style%3D%26quot%3Btext-align%3A%20justify%26quot%3B%26gt%3B%26lt%3Bspan%26gt%3B-nom%20%3A%20String%26amp%3Bnbsp%3B%20%26amp%3Bnbsp%3B%20%26amp%3Bnbsp%3B%26lt%3B%2Fspan%26gt%3B%26lt%3B%2Fdiv%26gt%3B%26lt%3Bdiv%20style%3D%26quot%3Btext-align%3A%20justify%26quot%3B%26gt%3B%26lt%3Bspan%26gt%3B-pr%C3%A9nom%20%3A%20String%26lt%3B%2Fspan%26gt%3B%26lt%3B%2Fdiv%26gt%3B%26lt%3Bdiv%20style%3D%26quot%3Btext-align%3A%20justify%26quot%3B%26gt%3B%26lt%3Bspan%26gt%3B-courte_bio%20%3AString%26lt%3B%2Fspan%26gt%3B%26lt%3B%2Fdiv%26gt%3B%26lt%3Bdiv%20style%3D%26quot%3Btext-align%3A%20justify%26quot%3B%26gt%3B-filmographie%20%3A%20String%5B%5D%26lt%3Bspan%26gt%3B%26lt%3Bbr%26gt%3B%26lt%3B%2Fspan%26gt%3B%26lt%3B%2Fdiv%26gt%3B%26lt%3B%2Ffont%26gt%3B%22%20style%3D%22text%3Bhtml%3D1%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3BwhiteSpace%3Dwrap%3Brounded%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22-135%22%20y%3D%22447%22%20width%3D%22110%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%&lt;/span&gt;&lt;span style=&quot;&quot;&gt;id_acteur : 1416&lt;/span&gt;&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;&lt;br&gt;&lt;/span&gt;nom = Christoher Bolan&lt;br&gt;&lt;span style=&quot;&quot;&gt;courte_bio :&quot;Realisateur de film d'action ...&quot;&lt;/span&gt;&lt;br&gt;&lt;div style=&quot;&quot;&gt;filmographie : [&quot;A la recherche d'Eric&quot;, &quot;La Matrice&quot;]&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="1005" y="285" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="" style="endArrow=none;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="96" target="115" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="970" y="400" as="sourcePoint"/>
+                        <mxPoint x="1020" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="118" value="" style="endArrow=none;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="99" target="115" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="950" y="230" as="sourcePoint"/>
+                        <mxPoint x="1010" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="120" value="Celebrite" style="whiteSpace=wrap;html=1;rounded=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="100" width="140" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="id = 4544&lt;br&gt;nom = Eric&lt;br&gt;&lt;span style=&quot;&quot;&gt;courte_bio : &quot;Ce n'est pas un homme !&quot;&lt;/span&gt;&lt;br&gt;&lt;div style=&quot;&quot;&gt;-filmographie : [&quot;A la recherche d'Eric&quot;]&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="150" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="nom = &quot;A la recherche d'Eric &quot;&lt;br&gt;Année = 2012&lt;br&gt;Genre = Social&lt;br&gt;resume = &quot;Il etait une &lt;br&gt;fois ...&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="810" y="190" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" value="" style="endArrow=none;html=1;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="120" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="940" y="210" as="sourcePoint"/>
+                        <mxPoint x="985" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="126" value="nom = &quot;La Matrice&quot;&amp;nbsp;&lt;br&gt;année = 2008&lt;br&gt;genre = Drame&lt;br&gt;resume = &quot;C'est l'histoire&lt;br&gt;&amp;nbsp;de ...&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="818" y="300" width="122" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="&lt;span&gt;id = 0001&lt;/span&gt;&lt;br&gt;&lt;span&gt;nom = Elu&lt;/span&gt;&lt;br&gt;&lt;span&gt;courte_bio : &quot;C'est l'élu&quot;&lt;/span&gt;&lt;br&gt;&lt;div&gt;filmographie : [&quot;La Matrice&quot;]&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="1005" y="370" width="110" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" value="" style="endArrow=none;html=1;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.992;exitY=0.371;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" target="130" edge="1" source="126">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="940" y="310" as="sourcePoint"/>
+                        <mxPoint x="1020" y="370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="138" value="Etat = loué" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="665" y="205" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" value="Etat = loué" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="295" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="140" value="Date emprunt = 01/01/2020" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="465" y="295" width="135" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" value="Date emprunt = 11/01/2020" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="205" width="125" height="35" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
