@@ -1,4 +1,4 @@
-package DVD;
+package cinema;
 
 public class Dvd {
 
