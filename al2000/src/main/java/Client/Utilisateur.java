@@ -19,4 +19,15 @@ public abstract class Utilisateur {
 		this.carteBleue = carteBleue;
 	}
 	
+	abstract Boolean autorise_loc();
+	
+	public int compte_nb_loc()
+	{
+		int nb_loc = 0;
+		
+		//TODO : créer une requete qui récupère les locations appartenant à un utilisateur
+		
+		return nb_loc;
+	}
+	
 }

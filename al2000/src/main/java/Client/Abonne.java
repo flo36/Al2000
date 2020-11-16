@@ -13,6 +13,7 @@ public class Abonne extends Utilisateur {
 	int solde;
 	ArrayList<Genre> restrictions = new ArrayList<Genre>();
 	ArrayList<Location> historique = new ArrayList<Location>();
+	static int nb_loc_autorise = 3;
 	
 	//le solde de la carte doit être supérieur à 15 euros mais c'est l'utilisateur qui doit initialiser la valeur de son solde
 	public Abonne(int cb,String _nom, String _prenom, int _age, String _email)
@@ -74,9 +75,9 @@ public class Abonne extends Utilisateur {
 	
 	
 	//l'utilisateur doit saisir le montant
-	public void initialierSolde()
+	public void initialierSolde(int solde_init)
 	{
-		
+		this.solde = solde_init;
 	}
 	
 	public void ajoutRestriction(Genre genre_restreint)
@@ -88,4 +89,17 @@ public class Abonne extends Utilisateur {
 	{
 		this.restrictions.remove(genre_restreint);
 	}
+	
+	public Boolean autorise_loc()
+	{
+		//on vérifie le nombre de location en cours pour l'utilisateur
+		int nb_loc_en_cours = this.compte_nb_loc();
+		
+		if(nb_loc_en_cours >= nb_loc_autorise)
+		{
+			return false;
+		}	
+		return true;
+	}
+	
 }
