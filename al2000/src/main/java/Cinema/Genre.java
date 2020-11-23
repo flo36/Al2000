@@ -1,4 +1,4 @@
-package cinema;
+package Cinema;
 
 public enum Genre {
     Action,
