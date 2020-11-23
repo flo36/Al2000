@@ -28,7 +28,7 @@ public class Film {
         return this.annee;
     }
 
-    public Genre getGenre(){
+    public Genre[] getGenre(){
         return this.genres;
     }
     

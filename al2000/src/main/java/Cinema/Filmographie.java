@@ -14,7 +14,7 @@ public class Filmographie {
         return this.celebrite;
     }
 
-    public Celebrite getFilm(){
+    public Film getFilm(){
         return this.film;
     }
 }
