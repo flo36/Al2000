@@ -1,4 +1,5 @@
-package main.java.Vues;
+package Vues;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
