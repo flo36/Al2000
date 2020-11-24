@@ -8,17 +8,22 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Client.Abonne;
+import Cinema.Genre;
+
 public class VueAbonne extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
-	private static JPanel panelCarte = new JPanel(); 
+	private Abonne abo = new Abonne(0, "Test", "Tester", 3, "mail");
 	
 	VueAbonne(){
 		
@@ -33,14 +38,25 @@ public class VueAbonne extends JFrame{
 		//top_ecran.setLayout(null);
 		
 		/////////////////////////Element de la vue///////////////////////////
-		JLabel titre = new JLabel("Bonjour **NomAbonne** !");
+		JLabel titre = new JLabel("Bonjour "+abo.getPrenom()+" !");
 		JButton retour = new JButton("Retour");
 		JButton help = new JButton("?");
 		JButton rendre = new JButton("Rendre DVD");
 		JButton films = new JButton("Voir Films");
+		//A changer
+		JComboBox restriction = new JComboBox();
+		restriction.addItem(Genre.ACTION);
+		restriction.addItem(Genre.ADVENTURE);
+		restriction.addItem(Genre.COMEDY);
+		restriction.addItem(Genre.CRIME);
+		restriction.addItem(Genre.DRAMA);
+		//Fin du a changer
+		JButton add_restriction = new JButton("Ajouter Restrictions");
+		JButton suppr_restriction = new JButton("Supprimer Restrictions");
 		JTextField recherche = new JTextField("Rechercher un film");
 		JButton recherche_al2000 = new JButton("in AL2000");
 		JButton recherche_cyber = new JButton("in Store");//Dans CyberVideo
+		JTextField t_montant = new JTextField("tapez la somme que vous souhaitez ajouter a votre carte");
 		JButton recharger_carte = new JButton("Recharger Carte");
 		JButton historique = new JButton("Consulter Historique");
 		JLabel rep_help = new JLabel("En cas de problème veuillez demander au gérant du store");
@@ -109,10 +125,7 @@ public class VueAbonne extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				accueil.setVisible(false);
-				ensemble.add(creerPanelCarte(), blayout.CENTER);
-				panelCarte.setVisible(true);
-				ensemble.revalidate();
+				System.out.println("Le montant ajouter et de "+t_montant.getText());
 			}
 			
 		});
@@ -122,7 +135,29 @@ public class VueAbonne extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+			
+		});
+		
+		//Ajouter une restriction
+		add_restriction.addActionListener(new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				abo.ajoutRestriction((Genre) restriction.getSelectedItem());
+				System.out.println("Les restrictions sont :"+abo.getRestrictions());
+			}
+			
+		});
+		
+		//Supprimer une restriction
+		suppr_restriction.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				abo.enleveRestriction((Genre) restriction.getSelectedItem());
+				System.out.println("Les restrictions sont :"+abo.getRestrictions());
 			}
 			
 		});
@@ -137,29 +172,46 @@ public class VueAbonne extends JFrame{
 		accueil.add(recherche_cyber);
 		accueil.add(films);
 		accueil.add(recharger_carte);
+		accueil.add(t_montant);
 		accueil.add(historique);
 		accueil.add(rep_help);
+		accueil.add(restriction);
+		accueil.add(add_restriction);
+		accueil.add(suppr_restriction);
 		
 		////////////////////Placement des Elements//////////////////////
 		//Potentiellement a changer et a passer en Dynamique : pas forcement utile car taille de l'ecran ne change pas
+		//Top_ecran : titre/retour/help
 		Dimension d = new Dimension(titre.getPreferredSize());
 		titre.setBounds(300, 10, d.width, d.height);
 		d.setSize(retour.getPreferredSize());
 		retour.setBounds(10, 10, d.width, d.height);
 		d.setSize(help.getPreferredSize());
 		help.setBounds(740, 10, d.width, d.height);
+		//Recherche 
 		d.setSize(recherche.getPreferredSize());
 		recherche.setBounds(150, 150, d.width+200, d.height);
 		recherche_al2000.setBounds(150+d.width+210, 150, d.width, d.height);
 		recherche_cyber.setBounds(150+d.width+350, 150, d.width, d.height);
+		//Voir film
 		d.setSize(films.getPreferredSize());
 		films.setBounds(300, 200, d.width, d.height);
+		//Rendre film
 		d.setSize(rendre.getPreferredSize());
 		rendre.setBounds(300, 250, d.width, d.height);
+		//Recharger carte
+		d.setSize(t_montant.getPreferredSize());
+		t_montant.setBounds(100, 300, d.width+10, d.height);
 		d.setSize(recharger_carte.getPreferredSize());
-		recharger_carte.setBounds(300, 300, d.width, d.height);
+		recharger_carte.setBounds(465, 300, d.width, d.height-5);
+		//Historique
 		d.setSize(historique.getPreferredSize());
 		historique.setBounds(300, 350, d.width, d.height);
+		//Restrictions
+		d.setSize(restriction.getPreferredSize());
+		restriction.setBounds(150, 400, d.width, d.height);
+		add_restriction.setBounds(155+d.width, 400, d.width+80, d.height);
+		suppr_restriction.setBounds(350+d.width, 400, d.width+100, d.height);
 		
 		//////////////////////////:Dimension de la fenetre////////////////////////////
 		Dimension d_accueil = new Dimension(800, 600);
@@ -171,25 +223,4 @@ public class VueAbonne extends JFrame{
 		pack();
 	}
 	
-	public JPanel creerPanelCarte() {
-		//Ajout des element 
-		JLabel l_montant = new JLabel("Quel montant voulez vous ajoutez :");
-		JTextField t_montant = new JTextField("tapez la somme que vous souhaitez ajouter a votre carte");
-		JButton confirmer = new JButton("Confirmer");
-		
-		//Action des boutons
-		confirmer.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-			
-		});
-		
-		panelCarte.add(l_montant);
-		panelCarte.add(t_montant);
-		panelCarte.add(confirmer);
-		return panelCarte;
-	}
 }
