@@ -7,7 +7,7 @@ import cinema.Genre;
 
 /**
 
-	getters et setters de la classe Mère :
+	getters et setters de la classe Mï¿½re :
 	- carteBleue
 	
 	getters pour les attributs suivants :
@@ -27,7 +27,7 @@ import cinema.Genre;
 	
 	
 	autorise_nb_loc(Utilisateur u) et solde_suffisant_loc
-	-> retourne un boolean qui autorise ou rejette une location sur les critères suivants : 
+	-> retourne un boolean qui autorise ou rejette une location sur les critï¿½res suivants : 
 		- nombre de location ACTUELLE de l'utilisateur
 		- le solde de la carte d'abonne
 		
@@ -51,7 +51,7 @@ public class Abonne extends Utilisateur {
 	ArrayList<Location> historique = new ArrayList<Location>();
 	static int nb_loc_autorise = 3;
 	
-	//le solde de la carte doit être supérieur à 15 euros mais c'est l'utilisateur qui doit initialiser la valeur de son solde
+	//le solde de la carte doit ï¿½tre supï¿½rieur ï¿½ 15 euros mais c'est l'utilisateur qui doit initialiser la valeur de son solde
 	public Abonne(int cb,String _nom, String _prenom, int _age, String _email)
 	{
 		super(cb);
@@ -128,7 +128,7 @@ public class Abonne extends Utilisateur {
 	
 	public boolean autorise_nb_loc()
 	{
-		//on vérifie le nombre de location en cours pour l'utilisateur
+		//on vï¿½rifie le nombre de location en cours pour l'utilisateur
 		int nb_loc_en_cours = this.compte_nb_loc();
 		
 		if(nb_loc_en_cours >= nb_loc_autorise)
@@ -147,8 +147,12 @@ public class Abonne extends Utilisateur {
 			//le solde est suffisant
 			return true;
 		}
+		else
+		{
+			//le solde n'est pas suffisant, il faut qu'il recharge sa carte
+			return false;
+		}	
 		
-		return true;
 	}
 	
 /////////////////////////////////////////////////requete BDD///////////////////////////////////////////////
@@ -167,7 +171,7 @@ public class Abonne extends Utilisateur {
 		//ajouter les restrictions si elles existent
 		if(this.getRestrictions()!= null)
 		{
-			//TODO : dépend de la conception de la bdd
+			//TODO : dï¿½pend de la conception de la bdd
 		}
 		
 		//ajout dans la bdd, voir class Requete
