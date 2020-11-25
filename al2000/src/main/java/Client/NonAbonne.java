@@ -4,12 +4,12 @@ import BDD.Requete;
 
 /**
 
-	getters et setters de la classe Mère :
+	getters et setters de la classe MÃ¨re :
 	- carteBleue
 		
 
 	autorise_nb_loc(Utilisateur u)
-	-> retourne un boolean qui autorise ou rejette une location sur les critères suivants : 
+	-> retourne un boolean qui autorise ou rejette une location sur les critÃ¨res suivants : 
    		- nombre de location ACTUELLE de l'utilisateur
 
    
@@ -29,7 +29,7 @@ public class NonAbonne extends Utilisateur {
 	
 	public boolean autorise_nb_loc()
 	{
-		//on vérifie le nombre de location en cours pour l'utilisateur
+		//on vÃ©rifie le nombre de location en cours pour l'utilisateur
 		int nb_loc_en_cours = this.compte_nb_loc();
 		
 		if(nb_loc_en_cours >= nb_loc_autorise)

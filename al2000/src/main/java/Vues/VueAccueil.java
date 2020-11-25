@@ -22,7 +22,7 @@ public class VueAccueil extends JFrame{
 
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
 	
-	VueAccueil(){
+	public VueAccueil(){
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		

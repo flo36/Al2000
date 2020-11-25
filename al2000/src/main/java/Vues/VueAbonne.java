@@ -25,7 +25,7 @@ public class VueAbonne extends JFrame{
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
 	private Abonne abo = new Abonne(0, "Test", "Tester", 3, "mail");
 	
-	VueAbonne(){
+	public VueAbonne(){
 		
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -135,7 +135,7 @@ public class VueAbonne extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+				//
 			}
 			
 		});

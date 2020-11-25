@@ -16,7 +16,7 @@ public class VueMaintenance extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
 
-	VueMaintenance(){
+	public VueMaintenance(){
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		

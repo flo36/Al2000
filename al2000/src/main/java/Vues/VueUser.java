@@ -15,7 +15,7 @@ public class VueUser extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
 	
-	VueUser(){
+	public VueUser(){
 		
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

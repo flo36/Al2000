@@ -1,6 +1,6 @@
 package BDD;
 
-import Model.Film;
+//import Model.Film;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

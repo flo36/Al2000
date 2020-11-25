@@ -1,6 +1,6 @@
 package Client;
 
-import cinema.Dvd;
+import Cinema.Dvd;
 
 /**
 	
@@ -10,7 +10,7 @@ import cinema.Dvd;
 	- dvd
 	
 	autorise_loc(Utilisateur u)
-	-> retourne un boolean qui autorise ou rejette une location sur les critères suivants : 
+	-> retourne un boolean qui autorise ou rejette une location sur les critï¿½res suivants : 
 	   - du nombre de location ACTUELLE de l'utilisateur
 	   - le solde de la carte d'abonne si c'est un abonne sinon toujours bon
 	   
@@ -68,10 +68,10 @@ public class Location {
 	public boolean autorise_loc()
 	{
 		
-		//on regarde si l'utilisateur n'a pas déjà louer le nb max de dvd a la fois
+		//on regarde si l'utilisateur n'a pas dï¿½jï¿½ louer le nb max de dvd a la fois
 		if(!user.autorise_nb_loc())
 		{
-			//la location n'est pas autorisée, l'utilisateur a déjà atteint son nb de location en même temps
+			//la location n'est pas autorisï¿½e, l'utilisateur a dï¿½jï¿½ atteint son nb de location en mï¿½me temps
 			return false;
 		}
 		
@@ -90,7 +90,7 @@ public class Location {
 	
 	public boolean ajoute_LocBdd()
 	{
-		//TODO : créer la requête pour  la location à la bdd
+		//TODO : crï¿½er la requï¿½te pour  la location ï¿½ la bdd
 		
 		boolean location_autorise = this.autorise_loc();
 		

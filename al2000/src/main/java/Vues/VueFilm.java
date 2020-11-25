@@ -8,7 +8,7 @@ import javax.swing.JTextArea;
 
 public class VueFilm extends JPanel {
 	
-	VueFilm(String nom_film){
+	public VueFilm(String nom_film){
 		ImageIcon image = new ImageIcon("Mettre l'image");
 		JLabel poster = new JLabel(image);
 		JLabel titre = new JLabel(nom_film);

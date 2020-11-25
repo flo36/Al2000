@@ -7,5 +7,5 @@ public class GestionnaireDeVues {
 	protected VueUser vueUser = new VueUser();
 	protected VueEnsembleFilm vueEnsembleFilm = new VueEnsembleFilm();
 	protected VueMaintenance vueMaintenance = new VueMaintenance();
-	
+
 }

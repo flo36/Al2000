@@ -34,7 +34,7 @@ public abstract class Utilisateur {
 	{
 		int nb_loc = 0;
 		
-		//TODO : créer une requete qui récupère les locations appartenant à un utilisateur
+		//TODO : crÃ©er une requete qui rÃ©cupÃ¨re les locations appartenant Ã  un utilisateur
 		
 		return nb_loc;
 	}

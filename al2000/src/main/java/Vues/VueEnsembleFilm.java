@@ -20,7 +20,7 @@ public class VueEnsembleFilm extends JFrame{
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
 	private boolean montrer_liste = true;
 	
-	VueEnsembleFilm(){
+	public VueEnsembleFilm(){
 		
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
