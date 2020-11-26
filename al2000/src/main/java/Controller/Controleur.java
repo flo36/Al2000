@@ -15,12 +15,13 @@ public class Controleur {
 		this.c_dvd 	= new LecteurDVD();
 	}
 	
-	public void lireCarteAbo() {
-		c_abo.getAllData();
+	//renvoie l'id de l'abonné present sur la carte
+	public String lireCarteAbo() {
+		return c_abo.getAllData().get("id");
 	}
 	
-	public void lireCarteBleu() {
-		c_cb.getAllData();
+	public String lireCarteBleu() {
+		return c_cb.getAllData().get("id");
 		
 	}
 	
@@ -28,9 +29,22 @@ public class Controleur {
 		c_ec.work();
 	}
 	
-	public void lireDVD() {
-		c_dvd.getAllData();
+	public String lireDVD() {
+		return c_dvd.getAllData().get("id");
 	}
 	
+	public boolean haveCarteAbo() {
+		return c_abo.estCharger();
+	}
+	
+	public boolean haveCarteBleu() {
+		return c_cb.estCharger();
+		
+	}
+	
+	
+	public boolean haveDVD() {
+		return c_dvd.estCharger();
+	}
 	
 }

@@ -13,7 +13,7 @@ public abstract class Lecteur {
 	}
 	
 	/** renvoie true si le support a lire est inserÃ©*/
-	protected boolean estCharge() {
+	protected boolean estCharger() {
 		return this.detecteur;
 	}
 	
@@ -31,5 +31,8 @@ public abstract class Lecteur {
 		this.data = data;
 	}
 	
+	public void ejecter() {
+		//ejecte le support qui eciste pas reelement mais n realité il existerais
+	}
 	
 }

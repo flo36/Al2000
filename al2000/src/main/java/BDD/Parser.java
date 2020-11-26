@@ -1,4 +1,4 @@
-package BDD;
+package src.main.java.BDD;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
