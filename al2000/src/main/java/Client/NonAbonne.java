@@ -1,6 +1,6 @@
-package Client;
+package src.main.java.Client;
 
-import BDD.Requete;
+import src.main.java.BDD.Requete;
 
 /**
 

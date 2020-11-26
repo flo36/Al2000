@@ -1,4 +1,4 @@
-package Client;
+package src.main.java.Client;
 
 
 /**

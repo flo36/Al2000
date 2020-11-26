@@ -1,4 +1,4 @@
-package BDD;
+package src.main.java.BDD;
 
 public class TransactionBanque {
 

@@ -1,4 +1,4 @@
-package Cinema;
+package src.main.java.Cinema;
 
 public class Dvd {
     

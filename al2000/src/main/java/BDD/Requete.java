@@ -1,10 +1,12 @@
-package BDD;
+package src.main.java.BDD;
 
 //import Model.Film;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import BDD.Parser;
 
 /**
  INTERFACE :
@@ -15,6 +17,12 @@ import java.util.ArrayList;
 
  getFilm(String nom)
  -> Recup√®re les donn√©es d'un film
+ 
+ getFilms(String nom)
+ -> RÈcupËre (au maximum) 10 films ayant la chaÓne de caractËres "nom" dans leur titre 
+ 
+ getFilms(Genre genre)
+ ->RÈcupËre les films ayant le genre donnÈ en paramËtre
 
  getAvailableFilmList(String nom)
  -> R√©cupere la liste des films stock√©s dans la machine
@@ -42,6 +50,11 @@ public class Requete {
 
     public static ArrayList<String> getFilmList() {
         ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT nomF FROM LesFilms");
+        return resultSetToArray1(rs);
+    }
+    
+    public static ArrayList<String> getFilms(String name){
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where nomF LIKE '%" + name + "%' LIMIT 10");
         return resultSetToArray1(rs);
     }
 

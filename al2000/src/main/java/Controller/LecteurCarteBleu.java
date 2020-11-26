@@ -1,4 +1,4 @@
-package Controller;
+package src.main.java.Controller;
 
 public class LecteurCarteBleu extends Lecteur{
 

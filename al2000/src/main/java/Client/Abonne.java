@@ -1,9 +1,12 @@
-package Client;
+package src.main.java.Client;
 
 import java.util.ArrayList;
 
-import BDD.Requete;
-import Cinema.Genre;
+import src.main.java.BDD.Requete;
+import src.main.java.Cinema.Genre;
+
+
+
 
 /**
 

@@ -1,4 +1,4 @@
-package Controller;
+package src.main.java.Controller;
 
 import java.util.HashMap;
 
@@ -13,7 +13,7 @@ public abstract class Lecteur {
 	}
 	
 	/** renvoie true si le support a lire est inseré*/
-	protected boolean estChargé() {
+	protected boolean estCharge() {
 		return this.detecteur;
 	}
 	

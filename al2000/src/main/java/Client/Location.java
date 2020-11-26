@@ -1,6 +1,6 @@
-package Client;
+package src.main.java.Client;
 
-import Cinema.Dvd;
+import src.main.java.Cinema.Dvd;
 
 /**
 	
