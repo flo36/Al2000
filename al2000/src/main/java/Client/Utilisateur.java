@@ -1,16 +1,21 @@
 package src.main.java.Client;
 
+import src.main.java.Cinema.Film;
 
 /**
 
 	getters et setters :
 	- carteBleue
+	- film_emprunte
+	
+	Si film_emprunte n'est pas null et l'utilisateur n'est pas abonn�, alors refut de louer
 
 **/
 
 public abstract class Utilisateur {
 
 	private int carteBleue;
+	
 	
 	
 	public Utilisateur(int cb)
@@ -30,13 +35,5 @@ public abstract class Utilisateur {
 	abstract boolean autorise_nb_loc();
 	abstract boolean solde_suffisant_loc();
 	
-	public int compte_nb_loc()
-	{
-		int nb_loc = 0;
-		
-		//TODO : créer une requete qui récupère les locations appartenant à un utilisateur
-		
-		return nb_loc;
-	}
 	
 }

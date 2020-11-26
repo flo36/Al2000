@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import BDD.Parser;
+import src.main.java.Cinema.Genre;
 
 /**
  INTERFACE :
@@ -21,8 +22,14 @@ import BDD.Parser;
  getFilms(String nom)
  -> RÈcupËre (au maximum) 10 films ayant la chaÓne de caractËres "nom" dans leur titre 
  
- getFilms(Genre genre)
+ getFilmsGenre(Genre genre)
  ->RÈcupËre les films ayant le genre donnÈ en paramËtre
+
+ getFilmsActeur(String nom)
+ ->RÈcupËre les films o˘ l'acteur (avec le nom passÈ en paramËtre) joue
+ 
+ getFilmsRealisateur(String nom)
+ ->RÈcupËre les films o˘ le rÈalisateur est "nom"
 
  getAvailableFilmList(String nom)
  -> R√©cupere la liste des films stock√©s dans la machine
@@ -57,7 +64,25 @@ public class Requete {
         ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where nomF LIKE '%" + name + "%' LIMIT 10");
         return resultSetToArray1(rs);
     }
+    
+    public static ArrayList<String> getFilmsGenre(Genre genre){
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where genre1 = '"+genre+"' "
+        																+ " or genre2 = '"+genre+"' "
+        																+ " or genre3 = '"+genre+"'"
+        																+ " LIMIT 10");
+        return resultSetToArray1(rs);
+    }
+    
+    public static ArrayList<String> getFilmsActeur(String name){
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where acteurs LIKE '%"+name+"%' LIMIT 10");
+        return resultSetToArray1(rs);
+    }
 
+    public static ArrayList<String> getFilmsRealisateur(String name){
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where realisateur LIKE '%"+name+"%' LIMIT 10");
+        return resultSetToArray1(rs);
+    }
+    
     public static ArrayList<String> getFilm(String name) {
         ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilms where nomF = '" + name + "'");
         ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT * FROM LesFilmsDisponibles WHERE nomF = " + name);

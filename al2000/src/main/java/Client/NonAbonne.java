@@ -1,11 +1,13 @@
 package src.main.java.Client;
 
 import src.main.java.BDD.Requete;
+import src.main.java.Cinema.Film;
 
 /**
 
-	getters et setters de la classe Mère :
+	getters et setters de la classe :
 	- carteBleue
+	- loc
 		
 
 	autorise_nb_loc(Utilisateur u)
@@ -21,10 +23,19 @@ import src.main.java.BDD.Requete;
 public class NonAbonne extends Utilisateur {
 
 	static int nb_loc_autorise = 1;
+	private Film loc = null;
 	
 	public NonAbonne(int cb)
 	{
 		super(cb);
+	}
+	
+	public Film getLoc() {
+		return loc;
+	}
+	
+	public void setLoc(Film film_emprunte) {
+		this.loc = film_emprunte;
 	}
 	
 	public boolean autorise_nb_loc()
@@ -43,6 +54,11 @@ public class NonAbonne extends Utilisateur {
 	{
 		//le non abonne paye avec sa carte, on ne peut donc pas regarder son solde
 		return true;
+	}
+	
+	public int compte_nb_loc()
+	{
+		return this.getLoc() != null ? 1 : 0;
 	}
 	
 /////////////////////////////////////////////////requete BDD///////////////////////////////////////////////
