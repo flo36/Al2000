@@ -1,4 +1,4 @@
-package src.main.java.Vues;
+package Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -11,9 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Client.Abonne;
+import Donnee.ALMediator;
+
+
 public class VueUser extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
+	private ALMediator al = new ALMediator();
 	
 	public VueUser(){
 		
@@ -31,6 +36,7 @@ public class VueUser extends JFrame{
 		JButton inscription = new JButton("S'abonner");
 		JTextField recherche = new JTextField("Rechercher un film");
 		JButton rechercher = new JButton("Recherche");
+		JButton films = new JButton("Voir films");
 		JLabel rep_help = new JLabel("En cas de problème veuillez demander au gérant du store");
 		rep_help.setVisible(false);
 		
@@ -69,6 +75,37 @@ public class VueUser extends JFrame{
 			
 		});
 		
+		//Afficher tout les films
+		films.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				gestion.vueAbonne.setVisible(false);
+				gestion.vueEnsembleFilm.setVisible(true);
+			}
+					
+		});
+		
+		inscription.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+			}
+			
+		});
+		
+		//Rendre un film
+		rendre.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				al.rendreUnFilm();
+			}
+			
+		});
+		
 		///////////////Ajout des elements////////////////////////////:::
 		accueil.add(titre);
 		accueil.add(retour);
@@ -78,6 +115,7 @@ public class VueUser extends JFrame{
 		accueil.add(rendre);
 		accueil.add(rechercher);
 		accueil.add(rep_help);
+		accueil.add(films);
 		
 		////////////////////Placement des Elements//////////////////////
 		//Potentiellement a changer
@@ -90,10 +128,12 @@ public class VueUser extends JFrame{
 			d.setSize(recherche.getPreferredSize());
 			recherche.setBounds(200, 150, d.width+200, d.height);
 			rechercher.setBounds(200+d.width+210, 150, d.width, d.height);
+			d.setSize(films.getPreferredSize());
+			films.setBounds(300, 200, d.width, d.height);
 			d.setSize(inscription.getPreferredSize());
-			inscription.setBounds(300, 200, d.width, d.height);
+			inscription.setBounds(300, 250, d.width, d.height);
 			d.setSize(rendre.getPreferredSize());
-			rendre.setBounds(300, 250, d.width, d.height);
+			rendre.setBounds(300, 300, d.width, d.height);
 		
 		//////////////////////////:Dimension de la fenetre////////////////////////////
 		Dimension d_accueil = new Dimension(800, 600);
@@ -102,5 +142,54 @@ public class VueUser extends JFrame{
 		this.add(accueil);
 		pack();
 	}
+	
+	public void createPanelAbonnement() {
+		Dimension d = new Dimension(100, 50);
+		//Nom
+		JLabel l_nom = new JLabel("Nom : ");
+		JTextField t_nom = new JTextField();
+		t_nom.setPreferredSize(d);
+		//Prenom
+		JLabel l_prenom = new JLabel("Prenom : ");
+		JTextField t_prenom = new JTextField();
+		t_prenom.setPreferredSize(d);
+		//Email
+		JLabel l_email = new JLabel("Email : ");
+		JTextField t_email = new JTextField();
+		t_email.setPreferredSize(d);
+		//Age 
+		JLabel l_age = new JLabel("Age : ");
+		JTextField t_age = new JTextField();
+		t_age.setPreferredSize(d);
+		//Carte bleu
+		JLabel l_carte = new JLabel("Numero de carte : ");
+		JTextField t_carte = new JTextField();
+		t_carte.setPreferredSize(d);
+		//Ajouter et annuler
+		JButton ajouter = new JButton("Ajouter");
+		JButton annuler = new JButton("Annuler");
+		
+		//Action des boutons
+		ajouter.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Abonne abonne = new Abonne(0, t_nom.getText(), t_prenom.getText(), 0, t_email.getText());
+			}
+			
+		});
+		
+		annuler.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+			}
+			
+		});
+		//Ajout des elements
+	}
+	
+	
 	
 }
