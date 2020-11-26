@@ -1,5 +1,6 @@
 package src.main.java.Client;
 
+import src.main.java.BDD.Requete;
 import src.main.java.Cinema.Film;
 
 /**
@@ -32,8 +33,17 @@ public abstract class Utilisateur {
 		this.carteBleue = carteBleue;
 	}
 	
-	abstract boolean autorise_nb_loc();
-	abstract boolean solde_suffisant_loc();
+	public int compte_nb_loc()
+	{
+		int cpt_loc = 0;
+		
+		Requete r = new Requete();
+			
+		return cpt_loc;
+	}
+	
+	public abstract boolean autorise_nb_loc();
+	public abstract boolean solde_suffisant_loc();
 	
 	
 }

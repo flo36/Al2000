@@ -42,8 +42,8 @@ import src.main.java.Cinema.Genre;
  deleteFilm(int id)
  -> supprime le DVD de la liste
 
- getUser(int id)
- -> récupère les infos d'un utilisateur
+ getUser(int cb)
+ -> récupère les infos d'un utilisateur gr�ce au num�ro de sa cb (clef primaire)
 
  setUser(String user)
  -> inscrit les infos d'un utilisateur
@@ -60,26 +60,23 @@ public class Requete {
         return resultSetToArray1(rs);
     }
     
-    public static ArrayList<String> getFilms(String name){
+   /* public static ArrayList<String> getFilms(String name){
         ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where nomF LIKE '%" + name + "%' LIMIT 10");
+        return resultSetToArray1(rs);
+    }*/
+    
+    public static ArrayList<String> getFilms(String name){
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT titre from LesFilms where titre LIKE '%"+name+"%' AND titre NOT IN ( SELECT titre from Locations where rendu = false) LIMIT 10;");
         return resultSetToArray1(rs);
     }
     
     public static ArrayList<String> getFilmsGenre(Genre genre){
-        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where genre1 = '"+genre+"' "
-        																+ " or genre2 = '"+genre+"' "
-        																+ " or genre3 = '"+genre+"'"
-        																+ " LIMIT 10");
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where genre = '"+genre+"' LIMIT 10");
         return resultSetToArray1(rs);
     }
     
-    public static ArrayList<String> getFilmsActeur(String name){
-        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where acteurs LIKE '%"+name+"%' LIMIT 10");
-        return resultSetToArray1(rs);
-    }
-
-    public static ArrayList<String> getFilmsRealisateur(String name){
-        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilmsDisponibles where realisateur LIKE '%"+name+"%' LIMIT 10");
+    public static ArrayList<String> getFilmsActeurs_Realisateurs(String name){
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilms INNER JOIN Participe on LesFilms.titre = Participe.titre and LesFilms.date = Participe.annee where id_celebrite IN (SELECT id from LesCelebrites where nom LIKE '%"+name+"%' ");
         return resultSetToArray1(rs);
     }
     
@@ -107,8 +104,8 @@ public class Requete {
         return new InteractionBaseLocale().sendUpdate("INSERT INTO LesFilmsDisponibles VALUES ('" + newfilm + "')");
     }
 
-    public static ArrayList<String> getUser(int id) {
-        ResultSet rs = new InteractionBaseOracle(USER_URL).sendRequest("SELECT * from LesClients where idC = " + id);
+    public static ArrayList<String> getUser(int cb) {
+        ResultSet rs = new InteractionBaseOracle(USER_URL).sendRequest("SELECT * from LesClients where CB = " + cb);
         return resultSetToArray1(rs);
     }
 

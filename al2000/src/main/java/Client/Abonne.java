@@ -53,9 +53,6 @@ public class Abonne extends Utilisateur {
 	int solde;
 	ArrayList<Genre> restrictions = new ArrayList<Genre>();
 	ArrayList<Location> historique = new ArrayList<Location>();
-	Film loc1;
-	Film loc2;
-	Film loc3;
 	static int nb_loc_autorise = 3;
 	
 	//le solde de la carte doit �tre sup�rieur � 15 euros mais c'est l'utilisateur qui doit initialiser la valeur de son solde
@@ -115,30 +112,6 @@ public class Abonne extends Utilisateur {
 		return historique;
 	}
 	
-	public Film getLoc1() {
-		return loc1;
-	}
-	
-	public Film getLoc2() {
-		return loc2;
-	}
-	
-	public Film getLoc3() {
-		return loc3;
-	}
-	
-	public void setLoc1(Film loc1) {
-		this.loc1 = loc1;
-	}
-	
-	public void setLoc2(Film loc2) {
-		this.loc2 = loc2;
-	}
-	
-	public void setLoc3(Film loc3) {
-		this.loc3 = loc3;
-	}
-	
 ///////////////////////////////////////fin getters && setters///////////////////////////////////////
 	
 	
@@ -156,16 +129,6 @@ public class Abonne extends Utilisateur {
 	public void enleveRestriction(Genre genre_restreint)
 	{
 		this.restrictions.remove(genre_restreint);
-	}
-	
-	public int compte_nb_loc()
-	{
-		int cpt_loc =0;
-		cpt_loc = this.getLoc1() != null ? cpt_loc+1 : cpt_loc;
-		cpt_loc = this.getLoc2() != null ? cpt_loc+1 : cpt_loc;
-		cpt_loc = this.getLoc3() != null ? cpt_loc+1 : cpt_loc;
-			
-		return cpt_loc;
 	}
 	
 	public boolean autorise_nb_loc()
