@@ -1,10 +1,9 @@
 package BDD;
 
-import Model.Film;
-
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static BDD.Parser.resultSetToArray;
 
 /**
  INTERFACE :
@@ -42,7 +41,7 @@ public class Requete {
 
     public static ArrayList<String> getFilmList() {
         ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT nomF FROM LesFilms");
-        return resultSetToArray1(rs);
+        return resultSetToArray(rs);
     }
 
     public static ArrayList<String> getFilm(String name) {
@@ -71,7 +70,7 @@ public class Requete {
 
     public static ArrayList<String> getUser(int id) {
         ResultSet rs = new InteractionBaseOracle(USER_URL).sendRequest("SELECT * from LesClients where idC = " + id);
-        return resultSetToArray1(rs);
+        return resultSetToArray(rs);
     }
 
     public static int setUser(String user) {
@@ -79,18 +78,5 @@ public class Requete {
     }
 
 
-    private static ArrayList<String> resultSetToArray1(ResultSet rs) {
-        ArrayList<String> l = new ArrayList<>();
 
-        while (true) {
-            try {
-                if (!rs.next()) break;
-                l.add(rs.getString(1));
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return l;
-    }
 }
