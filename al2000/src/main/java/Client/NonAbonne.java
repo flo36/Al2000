@@ -3,6 +3,7 @@ package Client;
 import java.util.ArrayList;
 
 import src.main.java.BDD.Requete;
+import src.main.java.Cinema.Film;
 
 /**
 
