@@ -1,12 +1,12 @@
-/**A Mettre a jour sur github**/
-
-package src.main.java.Vues;
+package Vues;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -15,13 +15,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import src.main.java.Cinema.Genre;
-import src.main.java.Client.Abonne;
+import Client.Abonne;
+import Donnee.ALMediator;
+import Cinema.Genre;
 
 public class VueAbonne extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
 	private Abonne abo = new Abonne(0, "Test", "Tester", 3, "mail");
+	private ALMediator al = new ALMediator();
 	
 	public VueAbonne(){
 		
@@ -124,6 +126,7 @@ public class VueAbonne extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Le montant ajouter et de "+t_montant.getText());
+				
 			}
 			
 		});
@@ -133,7 +136,7 @@ public class VueAbonne extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//
+				abo.getHistorique();
 			}
 			
 		});
@@ -156,6 +159,16 @@ public class VueAbonne extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				abo.enleveRestriction((Genre) restriction.getSelectedItem());
 				System.out.println("Les restrictions sont :"+abo.getRestrictions());
+			}
+			
+		});
+		
+		//Rendre un film
+		rendre.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				al.rendreUnFilm();
 			}
 			
 		});
