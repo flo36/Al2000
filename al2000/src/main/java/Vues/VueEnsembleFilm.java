@@ -1,10 +1,12 @@
-package src.main.java.Vues;
+package Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -15,21 +17,32 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 
+import Cinema.Film;
+import Cinema.Genre;
+
 public class VueEnsembleFilm extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
 	private boolean montrer_liste = true;
+	private Film film;
 	
 	public VueEnsembleFilm(){
 		
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		//Ajout des Elements 
+		//Panel gauche
 		JPanel gauche = new JPanel(); 
 		gauche.setLayout(null);
-		//Les panel droit contiendra soit le panel droit_liste_film, soit la vuefilm
-		JScrollPane droit= new JScrollPane();
+
+		//Panel droit
+		JPanel droit = new JPanel();
+		droit.setLayout(null);
+		JPanel liste_film = new JPanel();
+		liste_film.setBounds(10, 10, 550, 550);
+		
+		droit.add(liste_film);
+		
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,gauche, droit);
 		splitPane.setDividerLocation(180);
 		
@@ -81,11 +94,25 @@ public class VueEnsembleFilm extends JFrame{
 			
 		});
 		
+		/**Creation du panel droit dans cette fonction**/
 		//Recherche un film par titre, genre, acteur ou realisateur
 		recherche.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				ArrayList<Film> resultat = new ArrayList<Film>();
+				/**Test en attendant la BDD**/
+				Date date = new Date();
+				Genre[] genre = {Genre.ACTION, Genre.ADVENTURE};
+				Film f = new Film("Tesr", date, genre, 10,"un film banal", 3 );
+				Film ff = new Film("essai", date, genre, 12, "un film plus violent", 3);
+				Film fff = new Film("encore", date, genre, 6, "un film pour les petits", 1);
+				resultat.add(f);
+				resultat.add(ff);
+				resultat.add(fff);
+				/**Fin des tests en attendant la bdd**/
+				
+				//Choix de la recherche
 				if(choix_recherche.getSelectedItem().equals("Titre")) {
 					//Lancer la recherche par titre
 					System.out.println("Recherche par titre");
@@ -100,11 +127,45 @@ public class VueEnsembleFilm extends JFrame{
 					System.out.println("recherche par realisateur");
 				}
 				
+				//Affichage du resultat de la recherche
+				if(resultat.size() ==  1) {
+					VueFilm film = new VueFilm(resultat.get(0));
+					film.setBounds(10, 10, 550, 550);
+					droit.add(film);
+					liste_film.setVisible(false);
+					film.setVisible(true);
+				}else {
+					for(int i = 0; i<resultat.size(); i++) {
+						//On cree un bouton pour chaque film
+						JButton b = new JButton(resultat.get(i).getTitre());
+						int index = i;
+						b.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								//On cree aussi une vue pour chaque film qui sera visible que si le bouton est clique
+								VueFilm film = new VueFilm(resultat.get(index));
+								film.setBounds(10, 10, 550, 550);
+								droit.add(film);
+								film.setVisible(true);
+								liste_film.setVisible(false);
+							}
+							
+						});
+						liste_film.add(b);
+						liste_film.setVisible(true);
+						
+						
+					}
+				}
+				droit.revalidate();
+				System.out.println("Revalidate");
+				
 				
 				
 			}
 			
 		});
+		/**Fin de la creation du panel droit**/
 		
 		//Position des Elements
 		Dimension d = new Dimension(retour.getPreferredSize());
@@ -118,14 +179,7 @@ public class VueEnsembleFilm extends JFrame{
 		recherche.setBounds(10, 100, d.width, d.height);
 		
 		/******************************Fin Panel Gauche******************************/
-		
-		/*******************************Panel Droit********************************/
-		//droit ne peux pas etre un gridlayot avec un scrollpane
-		//Faire un for et ajouter chaque film au panel droit
-		
-		
-		/*****************************Fin Panel Droit*********************************/
-		
+
 		//Fenetre
 		Dimension d_accueil = new Dimension(800, 600);
 		this.setMinimumSize(d_accueil);
