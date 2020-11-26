@@ -1,7 +1,8 @@
 package Client;
 
-import BDD.Requete;
-import Cinema.Film;
+import java.util.ArrayList;
+
+import src.main.java.BDD.Requete;
 
 /**
 
@@ -23,11 +24,16 @@ import Cinema.Film;
 public class NonAbonne extends Utilisateur {
 
 	static int nb_loc_autorise = 1;
+	Film loc = null;
 	
-	public NonAbonne(int cb)
+	
+	public NonAbonne(int cb, Film _loc)
 	{
 		super(cb);
+		this.loc = _loc;
 	}
+	
+	
 	
 	public boolean autorise_nb_loc()
 	{
@@ -51,7 +57,6 @@ public class NonAbonne extends Utilisateur {
 	
 	public void enregistre_Non_Abonne()
 	{
-		
 		Requete r = new Requete();
 		String valeurs = "";
 		valeurs+= Integer.toString(this.getCarteBleue());
@@ -59,5 +64,14 @@ public class NonAbonne extends Utilisateur {
 		//ajout dans la bdd, voir class Requete
 		r.setUser(valeurs);
 	}
+	
+	public NonAbonne recupNonAbonne(ArrayList<String> resultat_requete)
+	{
+		int cb = Integer.parseInt(resultat_requete.get(0));
+		Film loc = resultat_requete.size()>=6 ? (Film) resultat_requete.get(6) : null;
+		
+		return new NonAbonne(cb, loc);
+	}
+	
 	
 }
