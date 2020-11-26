@@ -1,19 +1,24 @@
 package Cinema;
 
-public class Genre {
-    private GenreDispos g;
-    private Film f;
-
-    public Genre(GenreDispos g, Film f){
-        this.g = g;
-        this.f = f;
-    }
-
-    public GenreDispos getGenre(){
-        return this.g;
-    }
-
-    public Film getFilm(){
-        return this.f;
-    }
+public enum Genre {
+    ACTION,
+    ADVENTURE,
+    COMEDY,
+    CRIME,
+    DRAMA,
+    FANTASY,
+    HISTORICAL,
+    HORROR,
+    MYSTERY,
+    PHILOSOPHICAL,
+    POLITICAL,
+    ROMANCE,
+    SAGA,
+    SATIRE,
+    SF,
+    SOCIAL,
+    SPECULATIVE,
+    THRILLER,
+    URBAN,
+    WESTERN
 }
