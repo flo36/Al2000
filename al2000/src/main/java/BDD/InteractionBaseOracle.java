@@ -1,10 +1,6 @@
 package BDD;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  Interface :
@@ -21,8 +17,8 @@ public class InteractionBaseOracle {
     }
 
     private final String CONN_URL;
-    private final String USER = "test";
-    private final String PASSWD = "pw";
+    private final String USER = "grosf";
+    private final String PASSWD = "jqgsUvBHQ2";
 
 
     private Connection conn;

@@ -1,4 +1,4 @@
-package Cinema;
+package cinema;
 
 import java.util.Date;
 
@@ -10,14 +10,18 @@ public class Film {
     private int agemini;
     private String resume;
     private int duree;
+    private Celebrite[] realisateurs;
+    private Celebrite[] acteurs;
 
-    public Film(String titre, Date annee, Genre[] genres, int agemini, String resume, int duree){
+    public Film(String titre, Date annee, Genre[] genres, int agemini, String resume, int duree, Celebrite[] realisateurs, Celebrite[] acteurs){
         this.titre = titre;
         this.annee = annee;
         this.genres = genres;
         this.agemini = agemini;
         this.resume = resume;
         this.duree = duree;
+        this.realisateurs = realisateurs;
+        this.acteurs = acteurs;
     }
 
     public String getTitre(){
@@ -28,7 +32,7 @@ public class Film {
         return this.annee;
     }
 
-    public Genre[] getGenre(){
+    public Genre getGenre(){
         return this.genres;
     }
     
@@ -42,6 +46,14 @@ public class Film {
 
     public int getDuree(){
         return this.duree;
+    }
+
+    public Celebrite[] getRealisateurs(){
+        return this.realisateurs;
+    }
+
+    public Celebrite[] getActeurs(){
+        return this.acteurs;
     }
 
 }
