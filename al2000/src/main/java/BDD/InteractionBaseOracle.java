@@ -17,8 +17,8 @@ public class InteractionBaseOracle {
     }
 
     private final String CONN_URL;
-    private final String USER = "test";
-    private final String PASSWD = "pw";
+    private final String USER = "grosf";
+    private final String PASSWD = "jqgsUvBHQ2";
 
 
     private Connection conn;

@@ -2,8 +2,6 @@ package BDD;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import static java.lang.Integer.parseInt;
@@ -29,13 +27,13 @@ class RequeteTest {
 
     @Test
     void modifyFilmAvailable() {
-        ArrayList<String> filmavant = Requete.getFilm("Colorful");
+        ArrayList<String> filmavant = Requete.getFilm("Colorful", "Keiichi Hara");
         int filmavantid = parseInt(filmavant.get(filmavant.size()-3).substring(1));
         Boolean filmavantdispo = Boolean.parseBoolean(filmavant.get(filmavant.size()-1));
 
         Requete.modifyFilmAvailable(filmavantid);
 
-        ArrayList<String> filmapres = Requete.getFilm("Colorful");
+        ArrayList<String> filmapres = Requete.getFilm("Colorful","Keiichi Hara");
         int filmapresid = parseInt(filmapres.get(filmapres.size()-3).substring(1));
         Boolean filmapresdispo = Boolean.parseBoolean(filmapres.get(filmapres.size()-1));
 
@@ -48,12 +46,12 @@ class RequeteTest {
     @Test
     void deleteFilm() {
         ArrayList<String> filmsavant = Requete.getAvailableFilmList();
-        ArrayList<String> filmavant = Requete.getFilm(filmsavant.get(filmsavant.size()-1));
+        ArrayList<String> filmavant = Requete.getFilm(filmsavant.get(filmsavant.size()-2),filmsavant.get(filmsavant.size()-1));
 
         Requete.deleteFilm(parseInt(filmavant.get(filmavant.size()-3).substring(1)));
 
         ArrayList<String> filmsapres = Requete.getAvailableFilmList();
-        ArrayList<String> filmapres = Requete.getFilm(filmsavant.get(filmsavant.size()-1));
+        ArrayList<String> filmapres = Requete.getFilm(filmsavant.get(filmsavant.size()-2),filmsavant.get(filmsavant.size()-1));
 
         assertEquals(filmsavant.size(),filmsapres.size() +1);
         assertNotEquals(filmavant.size(),filmapres.size());
@@ -62,12 +60,12 @@ class RequeteTest {
     @Test
     void addFilm() {
         ArrayList<String> filmsavant = Requete.getAvailableFilmList();
-        ArrayList<String> filmavant = Requete.getFilm(filmsavant.get(filmsavant.size()-1));
+        ArrayList<String> filmavant = Requete.getFilm(filmsavant.get(filmsavant.size()-2),filmsavant.get(filmsavant.size()-1));
 
-        Requete.addFilm("Patient");
+        Requete.addFilm("Patient", "Fabien Marsaux");
 
         ArrayList<String> filmsapres = Requete.getAvailableFilmList();
-        ArrayList<String> filmapres = Requete.getFilm(filmsavant.get(filmsavant.size()-1));
+        ArrayList<String> filmapres = Requete.getFilm(filmsavant.get(filmsavant.size()-2),filmsavant.get(filmsavant.size()-1));
 
         assertEquals(filmsavant.size(),filmsapres.size() -1);
         assertNotEquals(filmavant.size(),filmapres.size());

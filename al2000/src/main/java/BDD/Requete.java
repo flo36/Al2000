@@ -44,9 +44,11 @@ public class Requete {
         return resultSetToArray(rs);
     }
 
-    public static ArrayList<String> getFilm(String name) {
-        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilms where nomF = '" + name + "'");
-        ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT * FROM LesFilmsDisponibles WHERE nomF = " + name);
+    public static ArrayList<String> getFilm(String name, String real) {
+        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilms where nomF = '" + name + "' AND realisateur = '" + real + "'");
+
+        //ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT * FROM LesFilmsDisponibles WHERE nomF = " + name);
+        ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT" + name + " " + real);
 
         return Parser.bddToStringArrayFilm(rs, rs2);
     }
@@ -57,19 +59,25 @@ public class Requete {
     }
 
     public static int modifyFilmAvailable(int id) {
-        return new InteractionBaseLocale().sendUpdate("UPDATE LesFilmsDisponibles SET available = !available WHERE idF = " + id);
+        //return new InteractionBaseLocale().sendUpdate("UPDATE LesFilmsDisponibles SET available = !available WHERE idF = " + id);
+        return new InteractionBaseLocale().sendUpdate("UPDATE " + id);
+
     }
 
     public static int deleteFilm(int oldfilm) {
-        return new InteractionBaseLocale().sendUpdate("DELETE FROM LesFilmsDisponibles WHERE idF = " + oldfilm);
+        //return new InteractionBaseLocale().sendUpdate("DELETE FROM LesFilmsDisponibles WHERE idF = " + oldfilm);
+        return new InteractionBaseLocale().sendUpdate("DELETE " + oldfilm);
+
     }
 
-    public static int addFilm(String newfilm) {
-        return new InteractionBaseLocale().sendUpdate("INSERT INTO LesFilmsDisponibles VALUES ('" + newfilm + "')");
+    public static int addFilm(String newfilmname, String newfilmreal) {
+        //return new InteractionBaseLocale().sendUpdate("INSERT INTO LesFilmsDisponibles VALUES ('" + newfilmname + "', '" + newfilmreal + "')");
+        return new InteractionBaseLocale().sendUpdate("INSERT " + newfilmname + " " + newfilmreal);
+
     }
 
-    public static ArrayList<String> getUser(int id) {
-        ResultSet rs = new InteractionBaseOracle(USER_URL).sendRequest("SELECT * from LesClients where idC = " + id);
+    public static ArrayList<String> getUser(int cb) {
+        ResultSet rs = new InteractionBaseOracle(USER_URL).sendRequest("SELECT * from LesClients where CB = " + cb);
         return resultSetToArray(rs);
     }
 

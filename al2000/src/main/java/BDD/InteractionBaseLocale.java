@@ -12,36 +12,44 @@ public class InteractionBaseLocale {
         super();
     }
     final String PATH = "BDD/filmlocal.bdd";
-
+        final int PARSESIZE = 4;
     /**
      * Parsing :
      * #id
      * nom du film
+     * realisateur
      * disponibilité : true ou false
      *
      */
 
     public ArrayList<String> sendRequest(String sql) {
-        String[] sqls = sql.trim().split(" ");
         if (sql.equals("SELECT nomF FROM LesFilmsDisponibles"))
             return getAllFilmsAvailable();
-        else if (sqls.length>=6 && sql.trim().substring(0,39).equals("SELECT * FROM LesFilmsDisponibles WHERE"))
-            return getFilm(sqls[7]);
-        else
-            return null;
+
+        String[] sqls = sql.trim().substring(47).trim().split(" ");
+        if (sqls[0].trim().equals("SELECT")){
+            return getFilm(sqls[1],sqls[2]);
+
+        }
+
+
+        return null;
 
     }
 
-    public int sendUpdate(String sql) {
-        String[] sqls = sql.trim().split(" ");
-        if (sqls.length>=8 && sql.trim().substring(0,59).equals("UPDATE LesFilmsDisponibles SET available = !available WHERE"))
-            return changeAvailability(parseInt(sqls[9]));
-        else if(sqls.length>=5 && sql.trim().substring(0,38).equals("INSERT INTO LesFilmsDisponibles VALUES"))
-            return addFilm(sqls[4].substring(2,sqls[4].length()-2));
-        else if(sqls.length>=5 && sql.trim().substring(0,37).equals("DELETE FROM LesFilmsDisponibles WHERE"))
-            return removeFilm(parseInt(sqls[6]));
-        else
-            return 0;
+    public int sendUpdate(String notsql) {
+        String[] sqls = notsql.trim().split(" ");
+        switch (sqls[0]){
+            case "UPDATE":
+                return changeAvailability(parseInt(sqls[1]));
+            case "INSERT":
+                return addFilm(sqls[1], sqls[2]);
+            case "DELETE":
+                return removeFilm(parseInt(sqls[1]));
+            default:
+                return 0;
+
+        }
     }
 
 
@@ -62,17 +70,16 @@ public class InteractionBaseLocale {
         return S;
     }
 
-    private ArrayList<String> getFilm(String name){
+    private ArrayList<String> getFilm(String name, String real){
         ArrayList<String> S = readContentFromFile();
         int i = 0;
 
         while (i < S.size()){
-            if(S.get(i+1).equals(name)){
-               i+=3;
+            if(S.get(i+1).equals(name) && S.get(i+2).equals(real)){
+               i+=4;
             }else{
-                S.remove(i);
-                S.remove(i);
-                S.remove(i);
+                for (int k = 0; k < PARSESIZE; k++)
+                    S.remove(i);
             }
         }
 
@@ -85,9 +92,9 @@ public class InteractionBaseLocale {
     private int changeAvailability(int id){
         ArrayList<String> S = readContentFromFile();
 
-        int pos = S.indexOf("#"+id);
-        boolean available = !Boolean.parseBoolean(S.get(pos + 2));
-        S.set(pos+2,Boolean.toString(available));
+        int pos = S.indexOf("#"+id) + PARSESIZE -1;
+        boolean available = !Boolean.parseBoolean(S.get(pos));
+        S.set(pos,Boolean.toString(available));
 
         if(writeContentInFile(S))
             return 1;
@@ -95,15 +102,16 @@ public class InteractionBaseLocale {
             return 0;
     }
 
-    private int addFilm(String nom){
+    private int addFilm(String nom, String real){
         ArrayList<String> S = readContentFromFile();
 
         S.add("#"+parseInt(S.get(S.size()-3).substring(1)+1));
         S.add(nom);
+        S.add(real);
         S.add("true");
 
         if(writeContentInFile(S))
-            return 3;
+            return PARSESIZE;
         else
             return 0;
     }
@@ -112,9 +120,8 @@ public class InteractionBaseLocale {
         ArrayList<String> S = readContentFromFile();
 
         int pos = S.indexOf("#"+id);
-        S.remove(pos);
-        S.remove(pos);
-        S.remove(pos);
+        for (int i = 0; i < PARSESIZE; i++)
+            S.remove(pos);
 
         for (int i = pos; i < S.size(); i++) {
             if(S.get(i).charAt(0) == '#')
@@ -122,7 +129,7 @@ public class InteractionBaseLocale {
         }
 
         if(writeContentInFile(S))
-            return -3;
+            return -PARSESIZE;
         else
             return 0;
     }

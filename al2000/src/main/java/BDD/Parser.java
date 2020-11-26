@@ -9,9 +9,7 @@ public class Parser {
     public static ArrayList<String> bddToStringArrayFilm(ResultSet rs,ArrayList<String> rs2 ){
         ArrayList<String> S= new ArrayList<>();
 
-        //resultset ici
         S.addAll(resultSetToArray(rs));
-
         S.addAll(rs2);
 
         return S;
