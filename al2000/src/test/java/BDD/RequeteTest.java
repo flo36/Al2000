@@ -57,6 +57,7 @@ class RequeteTest {
         assertNotEquals(filmavant.size(),filmapres.size());
     }
 
+    /*
     @Test
     void addFilm() {
         ArrayList<String> filmsavant = Requete.getAvailableFilmList();
@@ -71,6 +72,7 @@ class RequeteTest {
         assertNotEquals(filmavant.size(),filmapres.size());
 
     }
+    */
 
     @Test
     void getUser() {
