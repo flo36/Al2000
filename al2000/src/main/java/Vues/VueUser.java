@@ -1,4 +1,4 @@
-package Vues;
+package src.main.java.Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
