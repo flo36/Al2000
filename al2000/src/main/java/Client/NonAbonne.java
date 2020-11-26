@@ -1,7 +1,7 @@
-package src.main.java.Client;
+package Client;
 
-import src.main.java.BDD.Requete;
-import src.main.java.Cinema.Film;
+import BDD.Requete;
+import Cinema.Film;
 
 /**
 

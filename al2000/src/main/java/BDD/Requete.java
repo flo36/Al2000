@@ -1,4 +1,4 @@
-package src.main.java.BDD;
+package BDD;
 
 //import Model.Film;
 
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import src.main.java.Cinema.Genre;
+import Cinema.Genre;
 
 /**
  INTERFACE :
@@ -20,16 +20,16 @@ import src.main.java.Cinema.Genre;
  -> RecupÃ¨re les donnÃ©es d'un film
  
  getFilms(String nom)
- -> Récupère (au maximum) 10 films ayant la chaîne de caractères "nom" dans leur titre 
+ -> Rï¿½cupï¿½re (au maximum) 10 films ayant la chaï¿½ne de caractï¿½res "nom" dans leur titre 
  
  getFilmsGenre(Genre genre)
- ->Récupère les films ayant le genre donné en paramètre
+ ->Rï¿½cupï¿½re les films ayant le genre donnï¿½ en paramï¿½tre
 
  getFilmsActeur(String nom)
- ->Récupère les films où l'acteur (avec le nom passé en paramètre) joue
+ ->Rï¿½cupï¿½re les films oï¿½ l'acteur (avec le nom passï¿½ en paramï¿½tre) joue
  
  getFilmsRealisateur(String nom)
- ->Récupère les films où le réalisateur est "nom"
+ ->Rï¿½cupï¿½re les films oï¿½ le rï¿½alisateur est "nom"
 
  getAvailableFilmList(String nom)
  -> RÃ©cupere la liste des films stockÃ©s dans la machine
@@ -43,7 +43,7 @@ import src.main.java.Cinema.Genre;
  -> supprime le DVD de la liste
 
  getUser(int cb)
- -> rÃ©cupÃ¨re les infos d'un utilisateur grâce au numéro de sa cb (clef primaire)
+ -> rÃ©cupÃ¨re les infos d'un utilisateur grï¿½ce au numï¿½ro de sa cb (clef primaire)
 
  setUser(String user)
  -> inscrit les infos d'un utilisateur

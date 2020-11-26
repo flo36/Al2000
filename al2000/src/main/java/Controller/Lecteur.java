@@ -1,4 +1,4 @@
-package src.main.java.Controller;
+package Controller;
 
 import java.util.HashMap;
 
@@ -32,7 +32,7 @@ public abstract class Lecteur {
 	}
 	
 	public void ejecter() {
-		//ejecte le support qui eciste pas reelement mais n realité il existerais
+		//ejecte le support qui eciste pas reelement mais n realitï¿½ il existerais
 	}
 	
 }

@@ -1,4 +1,4 @@
-package src.main.java.Vues;
+package Vues;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,9 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import src.main.java.Cinema.Genre;
-import src.main.java.Client.Abonne;
-import src.main.java.Donnee.ALMediator;
+import Cinema.Genre;
+import Client.Abonne;
+import Donnee.ALMediator;
 
 public class VueAbonne extends JFrame{
 	

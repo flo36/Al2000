@@ -1,4 +1,4 @@
-package src.main.java.Vues;
+package Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -91,7 +91,7 @@ public class VueUser extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				
-				
+				//
 			}
 			
 		});
@@ -183,7 +183,7 @@ public class VueUser extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-
+				//
 			}
 			
 		});

@@ -1,14 +1,14 @@
-package src.main.java.Donnee;
+package Donnee;
 
 import java.util.ArrayList;
 
-import src.main.java.BDD.Requete;
-import src.main.java.BDD.TransactionBanque;
-import src.main.java.Cinema.Film;
-import src.main.java.Client.Abonne;
-import src.main.java.Client.Utilisateur;
-import src.main.java.Controller.Controleur;
-import src.main.java.Vues.VueAccueil;
+import BDD.Requete;
+import BDD.TransactionBanque;
+import Cinema.Film;
+import Client.Abonne;
+import Client.Utilisateur;
+import Controller.Controleur;
+import Vues.VueAccueil;
 
 public class ALMediator {
 	
@@ -52,19 +52,23 @@ public class ALMediator {
 	 * 
 	 * */
 	public int louerFilms(Film f) {
-		//verification possibilité d'emprunt
+		//verification possibilitï¿½ d'emprunt
 		if(user.autorise_nb_loc()) {
-			//TODO: requete insertion emprunt en base de donnée
+			//TODO: requete insertion emprunt en base de donnï¿½e
 			// + set sold user
 			//verifier la disponibiliter du film
+
+			//////
+			return 0; //ajout temporaire sinon Ã§a ne compile pas
+			/////
 		}else {
 			return 1;
 		}
 	}
 	
-	/** précondition :
+	/** prï¿½condition :
 	 *  l'udtilisateur est identifier depuis l'acceuil,
-	 *  le dvd est inséré
+	 *  le dvd est insï¿½rï¿½
 	 */
 	public void rendreUnFilm() {
 		//lecture du dvd :

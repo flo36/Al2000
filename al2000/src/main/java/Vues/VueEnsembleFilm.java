@@ -1,4 +1,4 @@
-package src.main.java.Vues;
+package Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,8 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 
-import src.main.java.Cinema.Film;
-import src.main.java.Cinema.Genre;
+import Cinema.Film;
+import Cinema.Genre;
 
 public class VueEnsembleFilm extends JFrame{
 	

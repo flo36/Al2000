@@ -1,4 +1,4 @@
-package src.main.java.Vues;
+package Vues;
 
 public class GestionnaireDeVues {
 

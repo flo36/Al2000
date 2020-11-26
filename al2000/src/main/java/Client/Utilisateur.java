@@ -1,7 +1,7 @@
-package src.main.java.Client;
+package Client;
 
-import src.main.java.BDD.Requete;
-import src.main.java.Cinema.Film;
+import BDD.Requete;
+import Cinema.Film;
 
 /**
 
@@ -9,7 +9,7 @@ import src.main.java.Cinema.Film;
 	- carteBleue
 	- film_emprunte
 	
-	Si film_emprunte n'est pas null et l'utilisateur n'est pas abonné, alors refut de louer
+	Si film_emprunte n'est pas null et l'utilisateur n'est pas abonnï¿½, alors refut de louer
 
 **/
 

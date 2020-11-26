@@ -1,10 +1,10 @@
-package src.main.java.Client;
+package Client;
 
 import java.util.ArrayList;
 
-import src.main.java.BDD.Requete;
-import src.main.java.Cinema.Film;
-import src.main.java.Cinema.Genre;
+import BDD.Requete;
+import Cinema.Film;
+import Cinema.Genre;
 
 
 

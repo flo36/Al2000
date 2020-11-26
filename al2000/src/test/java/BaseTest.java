@@ -1,9 +1,10 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-public class BaseTest {
+class BaseTest {
     @Test
-    public void tTest(){
+    void tTest() {
+        Al2000.main(null);
         assertTrue(true);
     }
 }

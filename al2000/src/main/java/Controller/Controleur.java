@@ -1,4 +1,4 @@
-package src.main.java.Controller;
+package Controller;
 
 public class Controleur {
 
@@ -15,7 +15,7 @@ public class Controleur {
 		this.c_dvd 	= new LecteurDVD();
 	}
 	
-	//renvoie l'id de l'abonné present sur la carte
+	//renvoie l'id de l'abonnï¿½ present sur la carte
 	public String lireCarteAbo() {
 		return c_abo.getAllData().get("id");
 	}
