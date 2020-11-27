@@ -8,5 +8,4 @@ public class GestionnaireDeVues {
 	protected VueEnsembleFilm vueEnsembleFilm = new VueEnsembleFilm();
 	protected VueMaintenance vueMaintenance = new VueMaintenance();
 	protected VueInscription vueInscription = new VueInscription();
-
 }
