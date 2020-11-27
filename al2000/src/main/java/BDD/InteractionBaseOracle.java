@@ -11,14 +11,16 @@ import java.sql.*;
  */
 
 public class InteractionBaseOracle {
-    public InteractionBaseOracle(String url){
+    public InteractionBaseOracle(String url, String usr, String psd){
         super();
         CONN_URL = url;
+        USER = usr;
+        PASSWD = psd;
     }
 
     private final String CONN_URL;
-    private final String USER = "grosf";
-    private final String PASSWD = "jqgsUvBHQ2";
+    private final String USER;
+    private final String PASSWD;
     private boolean isConnected = false;
 
 
