@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-package main.java.Vues;
-=======
-package Vues;
->>>>>>> 63969a05fb8f6f718b9bf118357b52c659e26ad8
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -14,13 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-<<<<<<< HEAD
 import main.java.Client.Abonne;
 
 
-=======
-import Client.Abonne;
->>>>>>> 63969a05fb8f6f718b9bf118357b52c659e26ad8
 
 public class VueInscription extends JFrame{
 	
