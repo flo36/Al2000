@@ -122,6 +122,7 @@ public class Abonne extends Utilisateur {
 		this.restrictions = restrictions;
 	}
 	
+
 	public ArrayList<Location> getHistorique() {
 		return historique;
 	}
