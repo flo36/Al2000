@@ -47,9 +47,10 @@ public class Requete {
 
     final static String FILM_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
     final static String USER_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
-    String mdp = "Ententeboischaultsud36";
+    String mdp = "";
+    String login = "";
     public ArrayList<Film> getFilmList() throws SQLException {
-        ResultSet rs = new InteractionBaseOracle(FILM_URL, "gautflor",mdp).sendRequest("SELECT titre,annee FROM LesFilms");
+        ResultSet rs = new InteractionBaseOracle(FILM_URL, login,mdp).sendRequest("SELECT titre,annee FROM LesFilms");
         ArrayList<Film> res = new ArrayList<Film>();
         while (rs.next()) 
         {
@@ -62,7 +63,7 @@ public class Requete {
     }
 
     public ArrayList<String> getFilm(String name, String real) {
-        ResultSet rs = new InteractionBaseOracle(FILM_URL, "gautflor", mdp).sendRequest("SELECT * from LesFilms where nomF = '" + name + "' AND realisateur = '" + real + "'");
+        ResultSet rs = new InteractionBaseOracle(FILM_URL, login, mdp).sendRequest("SELECT * from LesFilms where nomF = '" + name + "' AND realisateur = '" + real + "'");
 
         //ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT * FROM LesFilmsDisponibles WHERE nomF = " + name);
         ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT" + name + " " + real);
@@ -72,7 +73,7 @@ public class Requete {
 
 
     public ArrayList<Film> getAvailableFilmList() throws SQLException {
-        ResultSet rs = new InteractionBaseOracle(FILM_URL, "gautflor", mdp).sendRequest("SELECT nomF FROM LesFilmsDisponibles");
+        ResultSet rs = new InteractionBaseOracle(FILM_URL, login, mdp).sendRequest("SELECT nomF FROM LesFilmsDisponibles");
         ArrayList<Film> res = new ArrayList<Film>();
         while (rs.next()) 
         {
@@ -103,7 +104,7 @@ public class Requete {
     }
 
     public ArrayList<Abonne> getAbo(int cb) throws SQLException {
-        ResultSet rs = new InteractionBaseOracle(USER_URL, "gautflor", mdp).sendRequest("SELECT * from LesClients where CB = " + cb+" and abonne = true");
+        ResultSet rs = new InteractionBaseOracle(USER_URL, login, mdp).sendRequest("SELECT * from LesClients where CB = " + cb+" and abonne = true");
        
         ArrayList<Abonne> res = new ArrayList<Abonne>();
         while (rs.next()) 
@@ -118,7 +119,7 @@ public class Requete {
     }
     
     public ArrayList<NonAbonne> getNabo(int cb) throws SQLException {
-        ResultSet rs = new InteractionBaseOracle(USER_URL, "gautflor", mdp).sendRequest("SELECT * from LesClients where CB = " + cb+" and abonne = false");
+        ResultSet rs = new InteractionBaseOracle(USER_URL, login, mdp).sendRequest("SELECT * from LesClients where CB = " + cb+" and abonne = false");
        
         ArrayList<NonAbonne> res = new ArrayList<NonAbonne>();
         while (rs.next()) 
@@ -131,7 +132,7 @@ public class Requete {
     }
 
     public int setUser(String user) {
-        return new InteractionBaseOracle(USER_URL, "gautflor", mdp).sendUpdate("INSERT INTO LesClients VALUES (" + user + ")");
+        return new InteractionBaseOracle(USER_URL, login, mdp).sendUpdate("INSERT INTO LesClients VALUES (" + user + ")");
     }
     
     public ArrayList<Film> getFilms(String sql) {
