@@ -11,10 +11,10 @@ import Client.Abonne;
 import Client.Utilisateur;
 import Controller.Controleur;
 import Vues.VueAccueil;
-import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 
 public class ALMediator {
 
@@ -84,37 +84,34 @@ public class ALMediator {
 			// TODO: gestion du dvd ejecter si mauvais , stocker sinon, update
 		}
 	}
-
-	public ArrayList<Film> getFilms(String sql) {
-		InteractionBaseOracle bdd = new InteractionBaseOracle(
-				"jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521/IM2AG", "nom_user", "mdp_user");
-
-
-		ArrayList<Film> films = new ArrayList<Film>();
-		
-		try {
-			bdd.connect();
-			ResultSet rs = bdd.sendRequest(sql);
-			while (rs.next()) {
-				String titre = rs.getString("titre");
-				DateFormat format = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
-				java.util.Date annee = null;
-				try {
-					annee = format.parse(rs.getString("annee"));
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}
-				int agemini = Integer.parseInt(rs.getString("agemini"));
-				String resume = rs.getString("synopsis");
-				int duree = Integer.parseInt(rs.getString("duree"));
-				films.add(new Film(titre,annee,agemini,resume,duree));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			bdd.disconnect();
-		}
-		return films;
+	
+	public ArrayList<Film> RechercheParTitre(String titre){
+		String sql = "Select * From LesFilms where titre='"+titre+"';";
+		return requete.getFilms(sql);
+	}
+	
+	public ArrayList<Film> RechercheParGenre(String genre){
+		String sql = "Select * "
+				+ "From LesFilms F, LesGenres g "
+				+ " where F.titre= g.titre"
+				+ " and g.genre = '"+genre+"';";
+		return requete.getFilms(sql);
+	}
+	
+	public ArrayList<Film> RechercheParRealisateurs(String rea){
+		String sql = "Select *"
+				+ " From LesFilms F, LesRealisations R,  "
+				+ "where F.titre=R.titre"
+				+ "and R.real='"+rea+"';";
+		return requete.getFilms(sql);
+	}
+	
+	public ArrayList<Film> RechercheParActeur(String acteur){
+		String sql = "Select * "
+				+ "From LesFilms F, LesParticipations P "
+				+ "where F.titre=P.titre"
+				+ "and P.acteur='"+acteur+"';";
+		return requete.getFilms(sql);
 	}
 
 }
