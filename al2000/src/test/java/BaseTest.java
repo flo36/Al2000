@@ -5,9 +5,7 @@ class BaseTest {
 
     @Test
     void tTest2() {
-        /*
         Al2000.main(null);
         while(true);
-        */
     }
 }
