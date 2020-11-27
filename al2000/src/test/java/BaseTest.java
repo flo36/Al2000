@@ -1,18 +1,21 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
 import BDD.InteractionBaseOracle;
 import BDD.MaBDD;
 import Cinema.*;
+import Donnee.ALMediator;
 
 class BaseTest {
+    /*
     @Test
     void tTest() {
         InteractionBaseOracle bdd = new InteractionBaseOracle(
-                "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521/IM2AG");
+                "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521/IM2AG","ayariw","cQtPc54VbL");
 
         try {
             bdd.connect();
@@ -38,5 +41,15 @@ class BaseTest {
         }
         assertTrue(true);
 
+    }
+    */
+
+    @Test
+    void tTest2() {
+        ALMediator mediateur = new ALMediator();
+        ArrayList<Film> films = mediateur.getFilms("SELECT * FROM LesFilms WHERE agemini >= 13");
+        for(Film f : films){
+            System.out.println(f);
+        }
     }
 }

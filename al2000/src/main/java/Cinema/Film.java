@@ -38,4 +38,8 @@ public class Film {
         return this.duree;
     }
 
+    @Override
+    public String toString(){
+        return titre +" "+ annee +" "+ agemini +" "+ resume +" "+ duree;
+    }
 }
