@@ -1,3 +1,4 @@
+package main.java.Vues;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
