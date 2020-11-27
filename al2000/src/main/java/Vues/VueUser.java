@@ -24,9 +24,14 @@ public class VueUser extends JFrame{
 		
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+		JPanel user = new JPanel();
+		JPanel inscr = this.createPanelAbonnement();
+		inscr.setVisible(false);
 		JPanel accueil = new JPanel();
 		accueil.setLayout(null);
+		
+		user.add(inscr);
+		user.add(accueil);
 		
 		/////////////////////////Element de la vue///////////////////////////
 		JLabel titre = new JLabel("Bonjour !");
@@ -86,12 +91,13 @@ public class VueUser extends JFrame{
 					
 		});
 		
+		//A faire
 		inscription.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-				//
+				accueil.setVisible(false);
+				inscr.setVisible(true);;
 			}
 			
 		});
@@ -139,11 +145,12 @@ public class VueUser extends JFrame{
 		Dimension d_accueil = new Dimension(800, 600);
 		this.setMinimumSize(d_accueil);
 
-		this.add(accueil);
+		this.add(user);
 		pack();
 	}
 	
-	public void createPanelAbonnement() {
+	public JPanel createPanelAbonnement() {
+		JPanel abonnement = new JPanel();
 		Dimension d = new Dimension(100, 50);
 		//Nom
 		JLabel l_nom = new JLabel("Nom : ");
@@ -183,11 +190,25 @@ public class VueUser extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//
+
 			}
 			
 		});
 		//Ajout des elements
+		abonnement.add(l_prenom);
+		abonnement.add(t_prenom);
+		abonnement.add(l_nom);
+		abonnement.add(t_nom);
+		abonnement.add(l_age);
+		abonnement.add(t_age);
+		abonnement.add(l_email);
+		abonnement.add(t_email);
+		abonnement.add(l_carte);
+		abonnement.add(t_carte);
+		abonnement.add(ajouter);
+		abonnement.add(annuler);
+		
+		return abonnement;
 	}
 	
 	
