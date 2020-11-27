@@ -76,7 +76,7 @@ public class ALMediator {
 	}
 	
 	public ArrayList<Film> RechercheParTitre(String titre){
-		String sql = "Select * From LesFilms where titre LIKE '%"+titre+"%';";
+		String sql = "Select * From LesFilms where titre LIKE '%"+titre+"%'";
 		return requete.getFilms(sql);
 	}
 	
@@ -84,7 +84,7 @@ public class ALMediator {
 		String sql = "Select * "
 				+ "From LesFilms F, LesGenres g "
 				+ " where F.titre= g.titre"
-				+ " and g.genre LIKE '%"+genre+"%';";
+				+ " and g.genre LIKE '%"+genre+"%'";
 		return requete.getFilms(sql);
 	}
 	
@@ -92,7 +92,7 @@ public class ALMediator {
 		String sql = "Select *"
 				+ " From LesFilms F, LesRealisations R,  "
 				+ "where F.titre=R.titre"
-				+ "and R.real LIKE '%"+rea+"%';";
+				+ "and R.real LIKE '%"+rea+"%'";
 		return requete.getFilms(sql);
 	}
 	
@@ -100,7 +100,7 @@ public class ALMediator {
 		String sql = "Select * "
 				+ "From LesFilms F, LesParticipations P "
 				+ "where F.titre=P.titre"
-				+ "and P.acteur LIKE '%"+acteur+"%';";
+				+ "and P.acteur LIKE '%"+acteur+"%'";
 		return requete.getFilms(sql);
 	}
 
