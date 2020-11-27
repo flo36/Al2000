@@ -1,7 +1,6 @@
-package Vues;
+package main.java.Vues;
 
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,11 +8,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
-import Cinema.Film;
-import Cinema.Genre;
-import Donnee.ALMediator;
+import main.java.Cinema.Film;
+import main.java.Donnee.ALMediator;
+
+
 
 public class VueFilm extends JPanel {
 	

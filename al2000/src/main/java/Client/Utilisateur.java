@@ -1,7 +1,6 @@
-package Client;
+package main.java.Client;
 
-import BDD.Requete;
-import Cinema.Film;
+import main.java.BDD.Requete;
 
 /**
 
@@ -17,7 +16,10 @@ public abstract class Utilisateur {
 
 	private int carteBleue;
 	
-	
+	public Utilisateur()
+	{
+		
+	}
 	
 	public Utilisateur(int cb)
 	{

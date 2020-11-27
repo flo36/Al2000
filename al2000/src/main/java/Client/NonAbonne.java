@@ -1,9 +1,11 @@
-package Client;
+package main.java.Client;
 
 import java.util.ArrayList;
 
-import src.main.java.BDD.Requete;
-import src.main.java.Cinema.Film;
+import main.java.BDD.Requete;
+import main.java.Cinema.Film;
+
+
 
 /**
 
@@ -25,13 +27,10 @@ import src.main.java.Cinema.Film;
 public class NonAbonne extends Utilisateur {
 
 	static int nb_loc_autorise = 1;
-	Film loc = null;
 	
-	
-	public NonAbonne(int cb, Film _loc)
+	public NonAbonne(int cb)
 	{
 		super(cb);
-		this.loc = _loc;
 	}
 	
 	
@@ -69,9 +68,8 @@ public class NonAbonne extends Utilisateur {
 	public NonAbonne recupNonAbonne(ArrayList<String> resultat_requete)
 	{
 		int cb = Integer.parseInt(resultat_requete.get(0));
-		Film loc = resultat_requete.size()>=6 ? (Film) resultat_requete.get(6) : null;
 		
-		return new NonAbonne(cb, loc);
+		return new NonAbonne(cb);
 	}
 	
 	

@@ -1,10 +1,10 @@
-package Client;
+package main.java.Client;
 
 import java.util.ArrayList;
 
-import BDD.Requete;
-import Cinema.Film;
-import Cinema.Genre;
+import main.java.BDD.Requete;
+import main.java.Cinema.Film;
+import main.java.Cinema.Genre;
 
 
 
@@ -51,11 +51,14 @@ public class Abonne extends Utilisateur {
 	private int age;
 	private String email;
 	private int solde;
-	private Film loc1;
-	private Film loc2;
-	private Film loc3;
 	private ArrayList<Genre> restrictions = new ArrayList<Genre>();
+	private ArrayList<Location> historique = new ArrayList<Location>();
 	static int nb_loc_autorise = 3;
+	
+	public Abonne()
+	{
+		super();
+	}
 	
 	//le solde de la carte doit �tre sup�rieur � 15 euros mais c'est l'utilisateur qui doit initialiser la valeur de son solde
 	public Abonne(int cb,String _nom, String _prenom, int _age, String _email)
@@ -92,18 +95,6 @@ public class Abonne extends Utilisateur {
 	
 	public ArrayList<Genre> getRestrictions() {
 		return restrictions;
-	}
-	
-	public Film getLoc1() {
-		return loc1;
-	}
-	
-	public Film getLoc2() {
-		return loc2;
-	}
-	
-	public Film getLoc3() {
-		return loc3;
 	}
 	
 	public void setEmail(String email) {
@@ -205,11 +196,10 @@ public class Abonne extends Utilisateur {
 		int _age = Integer.parseInt(resultat_requete.get(3));
 		String _mail = resultat_requete.get(4);
 		int _solde = Integer.parseInt(resultat_requete.get(5));
-		Film _loc1 = resultat_requete.size()>=6 ? (Film) resultat_requete.get(6) : null;
-		Film _loc2 = resultat_requete.size()>=7 ? (Film) resultat_requete.get(7) : null;
-		Film _loc3 = resultat_requete.size()>=8 ? (Film) resultat_requete.get(8) : null;
 		
-		return new Abonne(cb, _nom, _prenom, _age, _mail, _solde, _loc1, _loc2, _loc3);
+		Abonne res = new Abonne(cb, _nom, _prenom, _age, _mail);
+		res.setSolde(_solde);
+		return res;
 	}
 	
 }

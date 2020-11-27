@@ -1,4 +1,4 @@
-package BDD;
+package main.java.BDD;
 
 import java.io.*;
 

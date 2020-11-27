@@ -1,20 +1,14 @@
-package Donnee;
+package main.java.Donnee;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
-import BDD.InteractionBaseOracle;
-import BDD.Requete;
-import BDD.TransactionBanque;
-import Cinema.Film;
-import Client.Abonne;
-import Client.Utilisateur;
-import Controller.Controleur;
-import Vues.VueAccueil;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
+import main.java.BDD.Requete;
+import main.java.BDD.TransactionBanque;
+import main.java.Cinema.Film;
+import main.java.Client.Abonne;
+import main.java.Client.Utilisateur;
+import main.java.Controller.Controleur;
+import main.java.Vues.VueAccueil;
 
 public class ALMediator {
 

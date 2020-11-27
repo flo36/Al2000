@@ -1,8 +1,7 @@
-package Vues;
+package main.java.Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -12,13 +11,13 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 
-import Cinema.Film;
-import Cinema.Genre;
-import Donnee.ALMediator;
+import main.java.Cinema.Film;
+import main.java.Donnee.ALMediator;
+
+
 
 public class VueEnsembleFilm extends JFrame{
 	

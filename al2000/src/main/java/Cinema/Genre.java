@@ -1,4 +1,4 @@
-package Cinema;
+package main.java.Cinema;
 
 public enum Genre {
     ACTION,

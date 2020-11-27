@@ -1,4 +1,4 @@
-package Donnee;
+package main.java.Donnee;
 
 public class Statistiques {
 }

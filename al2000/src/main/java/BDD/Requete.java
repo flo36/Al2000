@@ -1,16 +1,18 @@
-package BDD;
+package main.java.BDD;
+
+//import static main.java.BDD.Parser.resultSetToArray;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import Cinema.Film;
-import Donnee.SQLException;
-
-import static BDD.Parser.resultSetToArray;
+import main.java.Cinema.Film;
+import main.java.Client.Abonne;
+import main.java.Client.NonAbonne;
 
 /**
  INTERFACE :
@@ -45,14 +47,22 @@ public class Requete {
 
     final static String FILM_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
     final static String USER_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
-
-    public static ArrayList<String> getFilmList() {
-        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT nomF FROM LesFilms");
-        return resultSetToArray(rs);
+    String mdp = "Ententeboischaultsud36";
+    public ArrayList<Film> getFilmList() throws SQLException {
+        ResultSet rs = new InteractionBaseOracle(FILM_URL, "gautflor",mdp).sendRequest("SELECT titre,annee FROM LesFilms");
+        ArrayList<Film> res = new ArrayList<Film>();
+        while (rs.next()) 
+        {
+       		//le client rs est un abonne
+        	Film f = new Film(rs.getString(1), rs.getDate(2), rs.getInt(3), rs.getString(4), rs.getInt(5));
+        	res.add(f);
+        }
+        
+        return res;
     }
 
-    public static ArrayList<String> getFilm(String name, String real) {
-        ResultSet rs = new InteractionBaseOracle(FILM_URL).sendRequest("SELECT * from LesFilms where nomF = '" + name + "' AND realisateur = '" + real + "'");
+    public ArrayList<String> getFilm(String name, String real) {
+        ResultSet rs = new InteractionBaseOracle(FILM_URL, "gautflor", mdp).sendRequest("SELECT * from LesFilms where nomF = '" + name + "' AND realisateur = '" + real + "'");
 
         //ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT * FROM LesFilmsDisponibles WHERE nomF = " + name);
         ArrayList<String> rs2 = new InteractionBaseLocale().sendRequest("SELECT" + name + " " + real);
@@ -61,40 +71,72 @@ public class Requete {
     }
 
 
-    public static ArrayList<String> getAvailableFilmList() {
-        return new InteractionBaseLocale().sendRequest("SELECT nomF FROM LesFilmsDisponibles");
+    public ArrayList<Film> getAvailableFilmList() throws SQLException {
+        ResultSet rs = new InteractionBaseOracle(FILM_URL, "gautflor", mdp).sendRequest("SELECT nomF FROM LesFilmsDisponibles");
+        ArrayList<Film> res = new ArrayList<Film>();
+        while (rs.next()) 
+        {
+       		//le client rs est un abonne
+        	Film f = new Film(rs.getString(1), rs.getDate(2), rs.getInt(3), rs.getString(4), rs.getInt(5));
+        	res.add(f);
+        }
+        
+        return res;
     }
 
-    public static int modifyFilmAvailable(int id) {
+    public int modifyFilmAvailable(int id) {
         //return new InteractionBaseLocale().sendUpdate("UPDATE LesFilmsDisponibles SET available = !available WHERE idF = " + id);
         return new InteractionBaseLocale().sendUpdate("UPDATE " + id);
 
     }
 
-    public static int deleteFilm(int oldfilm) {
+    public int deleteFilm(int oldfilm) {
         //return new InteractionBaseLocale().sendUpdate("DELETE FROM LesFilmsDisponibles WHERE idF = " + oldfilm);
         return new InteractionBaseLocale().sendUpdate("DELETE " + oldfilm);
 
     }
 
-    public static int addFilm(String newfilmname, String newfilmreal) {
+    public int addFilm(String newfilmname, String newfilmreal) {
         //return new InteractionBaseLocale().sendUpdate("INSERT INTO LesFilmsDisponibles VALUES ('" + newfilmname + "', '" + newfilmreal + "')");
         return new InteractionBaseLocale().sendUpdate("INSERT " + newfilmname + " " + newfilmreal);
 
     }
 
-    public static ArrayList<String> getUser(int cb) {
-        ResultSet rs = new InteractionBaseOracle(USER_URL).sendRequest("SELECT * from LesClients where CB = " + cb);
-        return resultSetToArray(rs);
+    public ArrayList<Abonne> getAbo(int cb) throws SQLException {
+        ResultSet rs = new InteractionBaseOracle(USER_URL, "gautflor", mdp).sendRequest("SELECT * from LesClients where CB = " + cb+" and abonne = true");
+       
+        ArrayList<Abonne> res = new ArrayList<Abonne>();
+        while (rs.next()) 
+        {
+       		//le client rs est un abonne
+        	Abonne user = new Abonne(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
+        	user.setSolde(rs.getInt(6));
+        	res.add(user);
+        }
+        
+        return res;
+    }
+    
+    public ArrayList<NonAbonne> getNabo(int cb) throws SQLException {
+        ResultSet rs = new InteractionBaseOracle(USER_URL, "gautflor", mdp).sendRequest("SELECT * from LesClients where CB = " + cb+" and abonne = false");
+       
+        ArrayList<NonAbonne> res = new ArrayList<NonAbonne>();
+        while (rs.next()) 
+        {
+       		//le client rs est un abonne
+        	NonAbonne user = new NonAbonne(rs.getInt(1));
+        	res.add(user);
+        }
+        return res;
     }
 
-    public static int setUser(String user) {
-        return new InteractionBaseOracle(USER_URL).sendUpdate("INSERT INTO LesClients VALUES (" + user + ")");
+    public int setUser(String user) {
+        return new InteractionBaseOracle(USER_URL, "gautflor", mdp).sendUpdate("INSERT INTO LesClients VALUES (" + user + ")");
     }
     
     public ArrayList<Film> getFilms(String sql) {
 		InteractionBaseOracle bdd = new InteractionBaseOracle(
-				"jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521/IM2AG", "nom_user", "mdp_user");
+				"jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521/IM2AG", "gautflor", mdp);
 
 
 		ArrayList<Film> films = new ArrayList<Film>();

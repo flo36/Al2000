@@ -1,4 +1,4 @@
-package Vues;
+package main.java.Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -11,27 +11,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Client.Abonne;
-import Donnee.ALMediator;
+import main.java.Client.Abonne;
+import main.java.Donnee.ALMediator;
+
+
 
 
 public class VueUser extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
-	private ALMediator al = new ALMediator();
+	//private ALMediator al = new ALMediator();
 	
 	public VueUser(){
 		
 		super();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		JPanel user = new JPanel();
-		JPanel inscr = this.createPanelAbonnement();
-		inscr.setVisible(false);
 		JPanel accueil = new JPanel();
 		accueil.setLayout(null);
-		
-		user.add(inscr);
-		user.add(accueil);
 		
 		/////////////////////////Element de la vue///////////////////////////
 		JLabel titre = new JLabel("Bonjour !");
@@ -96,8 +92,8 @@ public class VueUser extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				accueil.setVisible(false);
-				inscr.setVisible(true);;
+				gestion.vueUser.setVisible(false);
+				gestion.vueInscription.setVisible(true);
 			}
 			
 		});
@@ -107,7 +103,7 @@ public class VueUser extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				al.rendreUnFilm();
+				//al.rendreUnFilm();
 			}
 			
 		});
@@ -145,7 +141,7 @@ public class VueUser extends JFrame{
 		Dimension d_accueil = new Dimension(800, 600);
 		this.setMinimumSize(d_accueil);
 
-		this.add(user);
+		this.add(accueil);
 		pack();
 	}
 	
