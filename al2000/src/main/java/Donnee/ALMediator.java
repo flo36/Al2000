@@ -55,14 +55,10 @@ public class ALMediator {
 	 */
 	public int louerFilms(Film f) {
 		// verification possibilit� d'emprunt
-		if (user.autorise_nb_loc()) {
-			// TODO: requete insertion emprunt en base de donn�e
-			// + set sold user
-			// verifier la disponibiliter du film
+		if (user.autorise_nb_loc() && user.solde_suffisant_loc()) {
 
-			//////
-			return 0; // ajout temporaire sinon ça ne compile pas
-			/////
+
+
 		} else {
 			return 1;
 		}

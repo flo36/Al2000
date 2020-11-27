@@ -17,6 +17,12 @@ public class Film {
         this.resume = resume;
         this.duree = duree;
     }
+    
+    public Film(String titre, Date annee)
+    {
+    	this.titre = titre;
+    	this.annee = annee;
+    }
 
     public String getTitre(){
         return this.titre;

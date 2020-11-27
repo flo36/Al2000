@@ -24,6 +24,7 @@ public class Location {
 	private int id_loc = 0;
 	private Utilisateur user;
 	private Dvd dvd;
+	private String date_emprunt;
 	
 	public Location()
 	{
@@ -34,6 +35,13 @@ public class Location {
 	{
 		this.user = _user;
 		this.dvd = _dvd;
+	}
+	public Location(int id, Utilisateur _user, Dvd _dvd, String date)
+	{
+		this.id_loc = id;
+		this.user = _user;
+		this.dvd = _dvd;
+		this.date_emprunt = date;
 	}
 	
 /////////////////////////////////////debut getters && setters///////////////////////////////////////

@@ -11,6 +11,11 @@ public class Dvd {
         this.sous_titres = sous_titres;
         this.film = film;
     }
+    
+    public Dvd(Film f)
+    {
+    	this.film = f;
+    }
 
     public int getEtat(){
         return this.etat;

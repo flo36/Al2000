@@ -1,5 +1,7 @@
 package main.java.BDD;
 
+import java.sql.Date;
+
 //import static main.java.BDD.Parser.resultSetToArray;
 
 import java.sql.ResultSet;
@@ -10,9 +12,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import main.java.Cinema.Dvd;
 import main.java.Cinema.Film;
 import main.java.Client.Abonne;
+import main.java.Client.Location;
 import main.java.Client.NonAbonne;
+import main.java.Client.Utilisateur;
 
 /**
  INTERFACE :
@@ -134,6 +139,40 @@ public class Requete {
     public int setUser(String user) {
         return new InteractionBaseOracle(USER_URL, login, mdp).sendUpdate("INSERT INTO LesClients VALUES (" + user + ")");
     }
+    
+    //Ajouter une location : prend en parametre un client et un dvd !!!!!!! penser à l auto incrémentation des id !!!!!!
+    public int addLocation(Utilisateur user, Dvd d)
+    {
+    	String pattern = "dd/MM/yyyy";
+    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+    	String date = simpleDateFormat.format(new Date());
+        
+        return new InteractionBaseOracle(USER_URL, login, mdp).sendUpdate("INSERT INTO LesLocations(titre, annee, cb_client, date_emprunt, rendu) values ("+d.getFilm().getTitre()+", "+d.getFilm().getTitre()+" ,'"+date+"', false)");
+    }
+    
+    //fin d une location : prend en parametre un dvd et client
+    public int finLocation(Dvd d, Utilisateur user)
+    {
+    	return new InteractionBaseOracle(USER_URL, login, mdp).sendUpdate("UPDATE LesLocations SET rendu = true where titre = '"+d.getFilm().getTitre()+"' AND annee = '"+d.getFilm().getAnnee()+"' AND cb_client = "+user.getCarteBleue());
+    }
+
+    //Voir l historique : prend en parametre un client
+    public ArrayList<Location> recupHistorique(Utilisateur user) throws SQLException
+    {
+    	 ResultSet rs = new InteractionBaseOracle(USER_URL, login, mdp).sendRequest("SELECT * FROM LesLocations where cb_client = "+user.getCarteBleue());
+         
+         ArrayList<Location> res = new ArrayList<Location>();
+         while (rs.next()) 
+         {
+        		//le client rs est un abonne
+         	Location loc = new Location(rs.getInt(1), user, new Dvd(new Film(rs.getString(2), rs.getDate(3))), rs.getString(4));
+         	res.add(loc);
+         }
+         return res;
+    }
+    
+    
     
     public ArrayList<Film> getFilms(String sql) {
 		InteractionBaseOracle bdd = new InteractionBaseOracle(
