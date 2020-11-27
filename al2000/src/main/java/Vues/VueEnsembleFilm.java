@@ -2,27 +2,29 @@ package Vues;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 
 import Cinema.Film;
 import Cinema.Genre;
+import Donnee.ALMediator;
 
 public class VueEnsembleFilm extends JFrame{
 	
 	private static GestionnaireDeVues gestion = new GestionnaireDeVues();
-	private boolean montrer_liste = true;
-	private Film film;
+	private ALMediator al = new ALMediator();
+	private ArrayList<Film> resultat = new ArrayList<Film>();
 	
 	public VueEnsembleFilm(){
 		
@@ -98,30 +100,30 @@ public class VueEnsembleFilm extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				ArrayList<Film> resultat = new ArrayList<Film>();
-				/**Test en attendant la BDD**/
+				
+				/**Test en attendant la BDD
 				Date date = new Date();
 				Genre[] genre = {Genre.ACTION, Genre.ADVENTURE};
-				Film f = new Film("Tesr", date, genre, 10,"un film banal", 3 );
-				Film ff = new Film("essai", date, genre, 12, "un film plus violent", 3);
-				Film fff = new Film("encore", date, genre, 6, "un film pour les petits", 1);
+				Film f = new Film("Tesr", date, 10,"un film banal", 180 );
+				Film ff = new Film("essai", date, 12, "un film plus violent", 165);
+				Film fff = new Film("encore", date, 6, "un film pour les petits", 113);
 				resultat.add(f);
 				resultat.add(ff);
 				resultat.add(fff);
-				/**Fin des tests en attendant la bdd**/
+				Fin des tests en attendant la bdd**/
 				
 				//Choix de la recherche
 				if(choix_recherche.getSelectedItem().equals("Titre")) {
-					//Lancer la recherche par titre
+					resultat = al.RechercheParTitre(nom_recherche.getText());
 					System.out.println("Recherche par titre");
 				}else if(choix_recherche.getSelectedItem().equals("Genre")) {
-					//Lancer la recherche par genre
+					resultat = al.RechercheParGenre(nom_recherche.getText());
 					System.out.println("Recherche par Genre");
 				}else if(choix_recherche.getSelectedItem().equals("Acteurs")) {
-					//Lancer la recherche par acteurs
+					resultat = al.RechercheParActeur(nom_recherche.getText());
 					System.out.println("Recherche par acteurs");
 				}else if(choix_recherche.getSelectedItem().equals("Realisateurs")){
-					//Lancer la recherche par realisateur
+					resultat = al.RechercheParRealisateurs(nom_recherche.getText());
 					System.out.println("recherche par realisateur");
 				}
 				
