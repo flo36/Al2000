@@ -102,15 +102,12 @@ public class VueEnsembleFilm extends JFrame{
 				/**Test en attendant la BDD**/
 				Date date = new Date();
 				Genre[] genre = {Genre.ACTION, Genre.ADVENTURE};
-
 				Film f = new Film("Tesr", date, genre, 10,"un film banal", 3 );
 				Film ff = new Film("essai", date, genre, 12, "un film plus violent", 3);
 				Film fff = new Film("encore", date, genre, 6, "un film pour les petits", 1);
 				resultat.add(f);
 				resultat.add(ff);
 				resultat.add(fff);
-
-
 				/**Fin des tests en attendant la bdd**/
 				
 				//Choix de la recherche

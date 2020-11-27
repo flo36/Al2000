@@ -2,8 +2,8 @@ package Client;
 
 import java.util.ArrayList;
 
-import BDD.Requete;
-import Cinema.Film;
+import src.main.java.BDD.Requete;
+import src.main.java.Cinema.Film;
 
 /**
 
@@ -68,11 +68,9 @@ public class NonAbonne extends Utilisateur {
 	
 	public NonAbonne recupNonAbonne(ArrayList<String> resultat_requete)
 	{
-
 		int cb = Integer.parseInt(resultat_requete.get(0));
-
 		Film loc = resultat_requete.size()>=6 ? (Film) resultat_requete.get(6) : null;
-
+		
 		return new NonAbonne(cb, loc);
 	}
 	
