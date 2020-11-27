@@ -11,7 +11,7 @@ import java.sql.*;
  */
 
 public class InteractionBaseOracle {
-    InteractionBaseOracle(String url){
+    public InteractionBaseOracle(String url){
         super();
         CONN_URL = url;
     }
@@ -19,12 +19,13 @@ public class InteractionBaseOracle {
     private final String CONN_URL;
     private final String USER = "grosf";
     private final String PASSWD = "jqgsUvBHQ2";
+    private boolean isConnected = false;
 
 
     private Connection conn;
 
 
-    private boolean connect() {
+    public boolean connect() {
 
         try {
             // Enregistrement du driver Oracle
@@ -42,10 +43,11 @@ public class InteractionBaseOracle {
             sqlerrorhandler(e);
             return true;
         }
+        isConnected = true;
         return false;
     }
 
-    private void disconnect() {
+    public void disconnect() {
         // Liberation des ressources et fermeture de la connexion...
         try {
             if(conn != null)
@@ -53,6 +55,7 @@ public class InteractionBaseOracle {
         } catch (SQLException e) {
             sqlerrorhandler(e);
         }
+        isConnected = false;
     }
 
 
@@ -69,7 +72,7 @@ public class InteractionBaseOracle {
 
 
     public ResultSet sendRequest(String sql) {
-        if(connect()) return null;
+        if(!isConnected) return null;
         Statement stmt;
         ResultSet rs = null;
 
@@ -80,13 +83,12 @@ public class InteractionBaseOracle {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        disconnect();
         return rs;
     }
 
 
     public int sendUpdate(String sql) {
-        if(connect()) return 0;
+        if(!isConnected) return 0;
         Statement stmt;
         int rs = 0;
 
@@ -97,7 +99,6 @@ public class InteractionBaseOracle {
         } catch (SQLException e) {
             System.out.print(e.getMessage());
         }
-        disconnect();
         return rs;
     }
 
