@@ -176,7 +176,7 @@ public class Requete {
     
     public ArrayList<Film> getFilms(String sql) {
 		InteractionBaseOracle bdd = new InteractionBaseOracle(
-				"jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521/IM2AG", "gautflor", mdp);
+				"jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521/IM2AG", login, mdp);
 
 
 		ArrayList<Film> films = new ArrayList<Film>();
