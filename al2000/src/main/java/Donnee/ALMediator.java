@@ -1,11 +1,13 @@
 package main.java.Donnee;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import main.java.BDD.Requete;
 import main.java.BDD.TransactionBanque;
 import main.java.Cinema.Film;
 import main.java.Client.Abonne;
+import main.java.Client.NonAbonne;
 import main.java.Client.Utilisateur;
 import main.java.Controller.Controleur;
 import main.java.Vues.VueAccueil;
@@ -28,21 +30,21 @@ public class ALMediator {
 		// on attendras l'insertion d'une carte pour instancier User.
 	}
 
-	public void IdentificationAcceuil(int debug) {
+	public void IdentificationAcceuil(int debug) throws NumberFormatException, SQLException {
 		// verifie le lecteur carte pour idientifier le client, String debug pour
 		// contourner l'abscnece de carte)
 		if (this.controleur.haveCarteAbo()) {
-			ArrayList<String> res = requete.getUser(Integer.parseInt(this.controleur.lireCarteAbo()));
-			this.user = new Abonne(Integer.parseInt(res.get(0)), res.get(1), res.get(2), Integer.parseInt(res.get(3)),
-					res.get(4));
-		} else if (debug != -1) {
-			ArrayList<String> res = requete.getUser(debug);
-			this.user = new Abonne(Integer.parseInt(res.get(0)), res.get(1), res.get(2), Integer.parseInt(res.get(3)),
-					res.get(4));
-		} else if (this.controleur.haveCarteBleu()) {
-			ArrayList<String> res = requete.getUser(Integer.parseInt(this.controleur.lireCarteBleu()));
-			this.user = new Abonne(Integer.parseInt(res.get(0)), res.get(1), res.get(2), Integer.parseInt(res.get(3)),
-					res.get(4));
+			ArrayList<Abonne> res = requete.getAbo(Integer.parseInt(this.controleur.lireCarteAbo()));
+			this.user = res!=null ? res.get(0) : null;
+			
+		//else if (debug != -1) {
+			
+		//}
+			
+		} 
+		else if (this.controleur.haveCarteBleu()) {
+			ArrayList<NonAbonne> res = requete.getNabo(Integer.parseInt(this.controleur.lireCarteBleu()));
+			this.user = res!=null ? res.get(0) : null;
 		}
 	}
 
