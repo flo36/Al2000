@@ -1,6 +1,7 @@
 package Vues;
 
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import Cinema.Film;
 import Cinema.Genre;
@@ -20,7 +22,7 @@ public class VueFilm extends JPanel {
 	public VueFilm(Film film){
 		this.setLayout(null);
 		//this.setLayout(new GridLayout());
-		Genre[] g = film.getGenre();
+		//Genre[] g = film.getGenre();
 		Dimension d = new Dimension();
 		/**Creation des element et ajout de ceux ci au panel**/
 		//Poster
@@ -40,7 +42,7 @@ public class VueFilm extends JPanel {
 		rea.setBounds(100, 60, d.width, d.height);
 		this.add(rea);
 		//Genre
-		JLabel genre = new JLabel("Genre :");
+		/*JLabel genre = new JLabel("Genre :");
 		d = genre.getPreferredSize();
 		genre.setBounds(100, 90, d.width, d.height);
 		this.add(genre);
@@ -49,7 +51,7 @@ public class VueFilm extends JPanel {
 			d = l.getPreferredSize();
 			l.setBounds(110+(i*100), 110, d.width, d.height);
 			this.add(l);
-		}
+		}*/
 		//Acteurs
 		JLabel cast = new JLabel("Les Acteurs seront ici");
 		d = cast.getPreferredSize();
