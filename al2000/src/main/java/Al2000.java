@@ -1,5 +1,3 @@
-package src.main.java;
-
 import javax.swing.SwingUtilities;
 
 import main.java.Vues.VueAccueil;

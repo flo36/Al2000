@@ -56,9 +56,7 @@ public class ALMediator {
 	public int louerFilms(Film f) {
 		// verification possibilit� d'emprunt
 		if (user.autorise_nb_loc() && user.solde_suffisant_loc()) {
-
-
-
+			return 2;
 		} else {
 			return 1;
 		}

@@ -1,7 +1,5 @@
 package main.java.BDD;
 
-import java.sql.Date;
-
 //import static main.java.BDD.Parser.resultSetToArray;
 
 import java.sql.ResultSet;
@@ -52,8 +50,8 @@ public class Requete {
 
     final static String FILM_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
     final static String USER_URL = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag";
-    String mdp = "";
-    String login = "";
+    String mdp = "cQtPc54VbL";
+    String login = "ayariw";
     public ArrayList<Film> getFilmList() throws SQLException {
         ResultSet rs = new InteractionBaseOracle(FILM_URL, login,mdp).sendRequest("SELECT titre,annee FROM LesFilms");
         ArrayList<Film> res = new ArrayList<Film>();
@@ -140,13 +138,13 @@ public class Requete {
         return new InteractionBaseOracle(USER_URL, login, mdp).sendUpdate("INSERT INTO LesClients VALUES (" + user + ")");
     }
     
-    //Ajouter une location : prend en parametre un client et un dvd !!!!!!! penser à l auto incrémentation des id !!!!!!
+    //Ajouter une location : prend en parametre un client et un dvd !!!!!!! penser ï¿½ l auto incrï¿½mentation des id !!!!!!
     public int addLocation(Utilisateur user, Dvd d)
     {
     	String pattern = "dd/MM/yyyy";
     	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
-    	String date = simpleDateFormat.format(new Date());
+    	String date = simpleDateFormat.format(new java.util.Date());
         
         return new InteractionBaseOracle(USER_URL, login, mdp).sendUpdate("INSERT INTO LesLocations(titre, annee, cb_client, date_emprunt, rendu) values ("+d.getFilm().getTitre()+", "+d.getFilm().getTitre()+" ,'"+date+"', false)");
     }

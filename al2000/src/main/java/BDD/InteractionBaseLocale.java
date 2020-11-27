@@ -31,9 +31,8 @@ public class InteractionBaseLocale {
             return getFilm(sqls[1],sqls[2]);
 
         }
-
-
-        return null;
+        
+        return new ArrayList<>();
 
     }
 

@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import main.java.Client.Abonne;
-import main.java.Donnee.ALMediator;
 
 
 
