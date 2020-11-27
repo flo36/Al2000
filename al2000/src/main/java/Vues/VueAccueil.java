@@ -1,7 +1,6 @@
 package Vues;
 
 import java.awt.BorderLayout;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -18,6 +17,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import Client.Abonne;
+
 
 public class VueAccueil extends JFrame{
 
@@ -33,6 +34,7 @@ public class VueAccueil extends JFrame{
 
 		////////////////////Elements de l'accueil///////////////////////////////////
 		JLabel titre = new JLabel("Bienvenue dans notre AL2000 !");
+		JTextField carte_abo = new JTextField("n°carte abo pour la simulation");
 		JButton insersion_abonne = new JButton("Cliquez pour simuler l'insertion d'une carte abonne");
 		JButton insertion = new JButton("Cliquez pour simuler une insertion");
 		JButton maintenance = new JButton("Maintenance");
@@ -108,6 +110,8 @@ public class VueAccueil extends JFrame{
 		insersion_abonne.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				Abonne abonne = new Abonne();
+				//Recuperer l'abonne
 				gestion.vueAccueil.setVisible(false);
 				gestion.vueAbonne.setVisible(true);
 			}
@@ -128,6 +132,7 @@ public class VueAccueil extends JFrame{
 		accueil.add(maintenance);
 		accueil.add(help);
 		accueil.add(debut);
+		accueil.add(carte_abo);
 		accueil.add(insersion_abonne);
 		accueil.add(insertion);
 		accueil.add(rep_help);
@@ -141,7 +146,9 @@ public class VueAccueil extends JFrame{
 		d.setSize(help.getPreferredSize());
 		help.setBounds(740, 10, d.width, d.height);
 		d.setSize(debut.getPreferredSize());
-		debut.setBounds(300, 250, d.width, d.height);
+		debut.setBounds(300, 200, d.width, d.height);
+		d.setSize(carte_abo.getPreferredSize());
+		carte_abo.setBounds(250, 270, d.width, d.height);
 		d.setSize(insersion_abonne.getPreferredSize());
 		insersion_abonne.setBounds(250, 300, d.width, d.height);
 		d.setSize(insertion.getPreferredSize());
